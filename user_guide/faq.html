@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>Frequently Asked Questions &mdash; Altair 2.1.0 documentation</title>
+  <title>Frequently Asked Questions &mdash; Altair 2.2.0dev0 documentation</title>
   
 
   
@@ -26,35 +26,23 @@
 
   
 
-  
-  
-    <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
-  
-
-  
-    <link rel="stylesheet" href="../_static/altair-plot.css" type="text/css" />
-  
-    <link rel="stylesheet" href="../_static/altair-gallery.css" type="text/css" />
-  
-    <link rel="stylesheet" href="../_static/theme_overrides.css" type="text/css" />
-  
-    <link rel="stylesheet" href="../_static/custom.css" type="text/css" />
-  
-
-  
-        <link rel="index" title="Index"
-              href="../genindex.html"/>
-        <link rel="search" title="Search" href="../search.html"/>
-    <link rel="top" title="Altair 2.1.0 documentation" href="../index.html"/>
-        <link rel="next" title="Display Troubleshooting" href="troubleshooting.html"/>
-        <link rel="prev" title="Customizing Visualizations" href="customization.html"/> 
+  <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/altair-plot.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/altair-gallery.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/theme_overrides.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/custom.css" type="text/css" />
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Display Troubleshooting" href="troubleshooting.html" />
+    <link rel="prev" title="Customizing Visualizations" href="customization.html" /> 
 
   
   <script src="../_static/js/modernizr.min.js"></script>
 
 </head>
 
-<body class="wy-body-for-nav" role="document">
+<body class="wy-body-for-nav">
 
    
   <div class="wy-grid-for-nav">
@@ -71,7 +59,7 @@
 
           
             
-            <img src="../_static/altair-logo-light.png" class="logo" />
+            <img src="../_static/altair-logo-light.png" class="logo" alt="Logo"/>
           
           </a>
 
@@ -79,7 +67,7 @@
             
             
               <div class="version">
-                2.1
+                2.2.0dev0
               </div>
             
           
@@ -160,7 +148,7 @@
     <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
 
       
-      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+      <nav class="wy-nav-top" aria-label="top navigation">
         
           <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
           <a href="../index.html">Altair</a>
@@ -168,9 +156,10 @@
       </nav>
 
 
-      
       <div class="wy-nav-content">
+        
         <div class="rst-content">
+        
           
 
 
@@ -224,12 +213,12 @@ and nteract that know how to automatically perform this rendering (see
 <a class="reference internal" href="../getting_started/installation.html#installation"><span class="std std-ref">Installation</span></a> for details). If you’re using another frontend, you’ll have
 to figure out how to run that javascript rendering in the most convenient way
 for you.</p>
-<p>The easiest approach is to use the <code class="xref py py-meth docutils literal"><span class="pre">Chart.serve()</span></code> method, which will convert
+<p>The easiest approach is to use the <code class="xref py py-meth docutils literal notranslate"><span class="pre">Chart.serve()</span></code> method, which will convert
 the chart to HTML, start a webserver, and open your default browser to view the
 chart. See <a class="reference internal" href="display_frontends.html#display-general"><span class="std std-ref">Working in non-Notebook Environments</span></a> for more information.</p>
 <p>If you would like to manually save the chart to an html file in order to view it
-with a browser, you can use the <code class="xref py py-meth docutils literal"><span class="pre">Chart.save()</span></code> method; for example
-<code class="docutils literal"><span class="pre">chart.save('filename.html')</span></code>.</p>
+with a browser, you can use the <code class="xref py py-meth docutils literal notranslate"><span class="pre">Chart.save()</span></code> method; for example
+<code class="docutils literal notranslate"><span class="pre">chart.save('filename.html')</span></code>.</p>
 </div>
 <div class="section" id="i-tried-to-make-a-plot-but-it-doesn-t-show-up">
 <span id="faq-no-display"></span><h2>I tried to make a plot but it doesn’t show up<a class="headerlink" href="#i-tried-to-make-a-plot-but-it-doesn-t-show-up" title="Permalink to this headline">¶</a></h2>
@@ -253,7 +242,7 @@ When you specify the data as a pandas DataFrame, this data is converted to
 JSON and included in its entirety in the plot spec.</p>
 <p>For example, here is a simple chart made from a dataframe with three rows
 of data:</p>
-<div class="highlight-python" id="faq-rst-altair-source-0"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">altair</span> <span class="kn">as</span> <span class="nn">alt</span>
+<div class="highlight-python notranslate" id="faq-rst-altair-source-0"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">altair</span> <span class="kn">as</span> <span class="nn">alt</span>
 <span class="kn">import</span> <span class="nn">pandas</span> <span class="kn">as</span> <span class="nn">pd</span>
 <span class="n">data</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">({</span><span class="s1">&#39;x&#39;</span><span class="p">:</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">],</span> <span class="s1">&#39;y&#39;</span><span class="p">:</span> <span class="p">[</span><span class="mi">2</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">]})</span>
 
@@ -266,7 +255,7 @@ of data:</p>
 <span class="n">pprint</span><span class="p">(</span><span class="n">chart</span><span class="o">.</span><span class="n">to_dict</span><span class="p">())</span>
 </pre></div>
 </div>
-<div class="highlight-none"><div class="highlight"><pre><span></span>{&#39;$schema&#39;: &#39;https://vega.github.io/schema/vega-lite/v2.4.1.json&#39;,
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>{&#39;$schema&#39;: &#39;https://vega.github.io/schema/vega-lite/v2.4.1.json&#39;,
  &#39;config&#39;: {&#39;view&#39;: {&#39;height&#39;: 300, &#39;width&#39;: 400}},
  &#39;data&#39;: {&#39;values&#39;: [{&#39;x&#39;: 1, &#39;y&#39;: 2}, {&#39;x&#39;: 2, &#39;y&#39;: 1}, {&#39;x&#39;: 3, &#39;y&#39;: 2}]},
  &#39;encoding&#39;: {&#39;x&#39;: {&#39;field&#39;: &#39;x&#39;, &#39;type&#39;: &#39;quantitative&#39;},
@@ -282,7 +271,7 @@ very large specifications, and by extension, some very large notebooks or
 web pages.</p>
 <p>The best way around this is to store the data in an external file, and
 pass it to the chart by URL. You can do this manually if you wish:</p>
-<div class="highlight-python" id="faq-rst-altair-source-1"><div class="highlight"><pre><span></span><span class="n">url</span> <span class="o">=</span> <span class="s1">&#39;data.json&#39;</span>
+<div class="highlight-python notranslate" id="faq-rst-altair-source-1"><div class="highlight"><pre><span></span><span class="n">url</span> <span class="o">=</span> <span class="s1">&#39;data.json&#39;</span>
 <span class="n">data</span><span class="o">.</span><span class="n">to_json</span><span class="p">(</span><span class="n">url</span><span class="p">,</span> <span class="n">orient</span><span class="o">=</span><span class="s1">&#39;records&#39;</span><span class="p">)</span>
 
 <span class="n">chart</span> <span class="o">=</span> <span class="n">alt</span><span class="o">.</span><span class="n">Chart</span><span class="p">(</span><span class="n">url</span><span class="p">)</span><span class="o">.</span><span class="n">mark_line</span><span class="p">()</span><span class="o">.</span><span class="n">encode</span><span class="p">(</span>
@@ -292,7 +281,7 @@ pass it to the chart by URL. You can do this manually if you wish:</p>
 <span class="n">pprint</span><span class="p">(</span><span class="n">chart</span><span class="o">.</span><span class="n">to_dict</span><span class="p">())</span>
 </pre></div>
 </div>
-<div class="highlight-none"><div class="highlight"><pre><span></span>{&#39;$schema&#39;: &#39;https://vega.github.io/schema/vega-lite/v2.4.1.json&#39;,
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>{&#39;$schema&#39;: &#39;https://vega.github.io/schema/vega-lite/v2.4.1.json&#39;,
  &#39;config&#39;: {&#39;view&#39;: {&#39;height&#39;: 300, &#39;width&#39;: 400}},
  &#39;data&#39;: {&#39;url&#39;: &#39;data.json&#39;},
  &#39;encoding&#39;: {&#39;x&#39;: {&#39;field&#39;: &#39;x&#39;, &#39;type&#39;: &#39;quantitative&#39;},
@@ -302,7 +291,7 @@ pass it to the chart by URL. You can do this manually if you wish:</p>
 </div>
 <p>Alternatively, Altair provides a JSON data transformer that will automatically
 store your data to disk and reference it by URL when a chart is rendered:</p>
-<div class="highlight-python" id="faq-rst-altair-source-2"><div class="highlight"><pre><span></span><span class="n">chart</span> <span class="o">=</span> <span class="n">alt</span><span class="o">.</span><span class="n">Chart</span><span class="p">(</span><span class="n">data</span><span class="p">)</span><span class="o">.</span><span class="n">mark_line</span><span class="p">()</span><span class="o">.</span><span class="n">encode</span><span class="p">(</span>
+<div class="highlight-python notranslate" id="faq-rst-altair-source-2"><div class="highlight"><pre><span></span><span class="n">chart</span> <span class="o">=</span> <span class="n">alt</span><span class="o">.</span><span class="n">Chart</span><span class="p">(</span><span class="n">data</span><span class="p">)</span><span class="o">.</span><span class="n">mark_line</span><span class="p">()</span><span class="o">.</span><span class="n">encode</span><span class="p">(</span>
  <span class="n">x</span><span class="o">=</span><span class="s1">&#39;x:Q&#39;</span><span class="p">,</span>
  <span class="n">y</span><span class="o">=</span><span class="s1">&#39;y:Q&#39;</span>
 <span class="p">)</span>
@@ -311,7 +300,7 @@ store your data to disk and reference it by URL when a chart is rendered:</p>
     <span class="n">pprint</span><span class="p">(</span><span class="n">chart</span><span class="o">.</span><span class="n">to_dict</span><span class="p">())</span>
 </pre></div>
 </div>
-<div class="highlight-none"><div class="highlight"><pre><span></span>{&#39;$schema&#39;: &#39;https://vega.github.io/schema/vega-lite/v2.4.1.json&#39;,
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>{&#39;$schema&#39;: &#39;https://vega.github.io/schema/vega-lite/v2.4.1.json&#39;,
  &#39;config&#39;: {&#39;view&#39;: {&#39;height&#39;: 300, &#39;width&#39;: 400}},
  &#39;data&#39;: {&#39;format&#39;: {&#39;type&#39;: &#39;json&#39;},
           &#39;url&#39;: &#39;altair-data-da466e59-a1e3-4659-a9a7-e64d09c85aa7.json&#39;},
@@ -332,12 +321,12 @@ in plots throughout, but that is not implemented yet.</p>
 <div class="section" id="maxrowserror-how-can-i-plot-large-datasets">
 <span id="altair-faq-max-rows"></span><h2>MaxRowsError: How can I plot Large Datasets?<a class="headerlink" href="#maxrowserror-how-can-i-plot-large-datasets" title="Permalink to this headline">¶</a></h2>
 <p>If you try to create a plot that will directly embed a dataset with more than
-5000 rows, you will see a <code class="docutils literal"><span class="pre">MaxRowsError</span></code>:</p>
-<div class="highlight-python" id="faq-rst-altair-source-3"><div class="highlight"><pre><span></span><span class="n">data</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">({</span><span class="s1">&#39;x&#39;</span><span class="p">:</span> <span class="nb">range</span><span class="p">(</span><span class="mi">10000</span><span class="p">)})</span>
+5000 rows, you will see a <code class="docutils literal notranslate"><span class="pre">MaxRowsError</span></code>:</p>
+<div class="highlight-python notranslate" id="faq-rst-altair-source-3"><div class="highlight"><pre><span></span><span class="n">data</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">({</span><span class="s1">&#39;x&#39;</span><span class="p">:</span> <span class="nb">range</span><span class="p">(</span><span class="mi">10000</span><span class="p">)})</span>
 <span class="n">alt</span><span class="o">.</span><span class="n">Chart</span><span class="p">(</span><span class="n">data</span><span class="p">)</span><span class="o">.</span><span class="n">mark_line</span><span class="p">()</span>
 </pre></div>
 </div>
-<div class="highlight-none"><div class="highlight"><pre><span></span>MaxRowsError: The number of rows in your dataset is greater than the maximum
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>MaxRowsError: The number of rows in your dataset is greater than the maximum
               allowed (5000). For information on how to plot larger datasets
               in Altair, see the documentation.
 </pre></div>
@@ -354,9 +343,9 @@ error is a way of preventing that.</p>
 in the notebook, but rather pass it to the chart by URL.
 This not only addresses the issue of large notebooks, but also leads to better
 interactivity performance with large datasets.</p>
-<p>As noted above, Altair has a <code class="docutils literal"><span class="pre">JSON</span></code> data transformer that will do
+<p>As noted above, Altair has a <code class="docutils literal notranslate"><span class="pre">JSON</span></code> data transformer that will do
 this transparently:</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">alt</span><span class="o">.</span><span class="n">data_transformers</span><span class="o">.</span><span class="n">enable</span><span class="p">(</span><span class="s1">&#39;json&#39;</span><span class="p">)</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">alt</span><span class="o">.</span><span class="n">data_transformers</span><span class="o">.</span><span class="n">enable</span><span class="p">(</span><span class="s1">&#39;json&#39;</span><span class="p">)</span>
 </pre></div>
 </div>
 <p>With this data transformer enabled, each time you make a plot the data will be
@@ -368,9 +357,9 @@ notebook output.</p>
 <div class="section" id="disabling-maxrows">
 <h3>Disabling MaxRows<a class="headerlink" href="#disabling-maxrows" title="Permalink to this headline">¶</a></h3>
 <p>If you are certain you would like to embed your dataset within the visualization
-specification, you can disable the <code class="docutils literal"><span class="pre">MaxRows</span></code> check by modifying the arguments
+specification, you can disable the <code class="docutils literal notranslate"><span class="pre">MaxRows</span></code> check by modifying the arguments
 to the default data transformer:</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">alt</span><span class="o">.</span><span class="n">data_transformers</span><span class="o">.</span><span class="n">enable</span><span class="p">(</span><span class="s1">&#39;default&#39;</span><span class="p">,</span> <span class="n">max_rows</span><span class="o">=</span><span class="kc">None</span><span class="p">)</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">alt</span><span class="o">.</span><span class="n">data_transformers</span><span class="o">.</span><span class="n">enable</span><span class="p">(</span><span class="s1">&#39;default&#39;</span><span class="p">,</span> <span class="n">max_rows</span><span class="o">=</span><span class="kc">None</span><span class="p">)</span>
 </pre></div>
 </div>
 <p>If you choose this route, please be careful: if you are making multiple plots
@@ -382,9 +371,7 @@ and performance may suffer.</p>
 
 
            </div>
-           <div class="articleComments">
-            
-           </div>
+           
           </div>
           <footer>
   
@@ -406,7 +393,7 @@ and performance may suffer.</p>
 
     </p>
   </div>
-  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
 
 </footer>
 
@@ -424,7 +411,8 @@ and performance may suffer.</p>
     <script type="text/javascript">
         var DOCUMENTATION_OPTIONS = {
             URL_ROOT:'../',
-            VERSION:'2.1.0',
+            VERSION:'2.2.0dev0',
+            LANGUAGE:'None',
             COLLAPSE_INDEX:false,
             FILE_SUFFIX:'.html',
             HAS_SOURCE:  true,
@@ -440,19 +428,13 @@ and performance may suffer.</p>
 
   
 
-  
-  
-    <script type="text/javascript" src="../_static/js/theme.js"></script>
-  
+  <script type="text/javascript" src="../_static/js/theme.js"></script>
 
-  
-  
   <script type="text/javascript">
       jQuery(function () {
-          SphinxRtdTheme.StickyNav.enable();
+          SphinxRtdTheme.Navigation.enable(true);
       });
-  </script>
-   
+  </script> 
 
 </body>
 </html>

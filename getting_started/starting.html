@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>Basic Statistical Visualization &mdash; Altair 2.1.0 documentation</title>
+  <title>Basic Statistical Visualization &mdash; Altair 2.2.0dev0 documentation</title>
   
 
   
@@ -26,35 +26,23 @@
 
   
 
-  
-  
-    <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
-  
-
-  
-    <link rel="stylesheet" href="../_static/altair-plot.css" type="text/css" />
-  
-    <link rel="stylesheet" href="../_static/altair-gallery.css" type="text/css" />
-  
-    <link rel="stylesheet" href="../_static/theme_overrides.css" type="text/css" />
-  
-    <link rel="stylesheet" href="../_static/custom.css" type="text/css" />
-  
-
-  
-        <link rel="index" title="Index"
-              href="../genindex.html"/>
-        <link rel="search" title="Search" href="../search.html"/>
-    <link rel="top" title="Altair 2.1.0 documentation" href="../index.html"/>
-        <link rel="next" title="Example Gallery" href="../gallery/index.html"/>
-        <link rel="prev" title="Installation" href="installation.html"/> 
+  <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/altair-plot.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/altair-gallery.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/theme_overrides.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/custom.css" type="text/css" />
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Example Gallery" href="../gallery/index.html" />
+    <link rel="prev" title="Installation" href="installation.html" /> 
 
   
   <script src="../_static/js/modernizr.min.js"></script>
 
 </head>
 
-<body class="wy-body-for-nav" role="document">
+<body class="wy-body-for-nav">
 
    
   <div class="wy-grid-for-nav">
@@ -71,7 +59,7 @@
 
           
             
-            <img src="../_static/altair-logo-light.png" class="logo" />
+            <img src="../_static/altair-logo-light.png" class="logo" alt="Logo"/>
           
           </a>
 
@@ -79,7 +67,7 @@
             
             
               <div class="version">
-                2.1
+                2.2.0dev0
               </div>
             
           
@@ -161,7 +149,7 @@
     <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
 
       
-      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+      <nav class="wy-nav-top" aria-label="top navigation">
         
           <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
           <a href="../index.html">Altair</a>
@@ -169,9 +157,10 @@
       </nav>
 
 
-      
       <div class="wy-nav-content">
+        
         <div class="rst-content">
+        
           
 
 
@@ -238,7 +227,7 @@ characteristics of statistical visualization is that it begins with
 Dataframes. For the purposes of this tutorial, we’ll start by importing Pandas
 and creating a simple DataFrame to visualize, with a categorical variable in
 column a and a numerical variable in column b:</p>
-<div class="highlight-python" id="starting-rst-altair-source-0"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">pandas</span> <span class="kn">as</span> <span class="nn">pd</span>
+<div class="highlight-python notranslate" id="starting-rst-altair-source-0"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">pandas</span> <span class="kn">as</span> <span class="nn">pd</span>
 <span class="n">data</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">({</span><span class="s1">&#39;a&#39;</span><span class="p">:</span> <span class="nb">list</span><span class="p">(</span><span class="s1">&#39;CCCDDDEEE&#39;</span><span class="p">),</span>
                      <span class="s1">&#39;b&#39;</span><span class="p">:</span> <span class="p">[</span><span class="mi">2</span><span class="p">,</span> <span class="mi">7</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">6</span><span class="p">,</span> <span class="mi">8</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">7</span><span class="p">]})</span>
 </pre></div>
@@ -249,9 +238,9 @@ piece of plotting with Altair.</p>
 </div>
 <div class="section" id="the-chart-object">
 <span id="basic-tutorial-chart-object"></span><h2>The Chart Object<a class="headerlink" href="#the-chart-object" title="Permalink to this headline">¶</a></h2>
-<p>The fundamental object in Altair is the <a class="reference internal" href="../user_guide/API.html#altair.Chart" title="altair.Chart"><code class="xref py py-class docutils literal"><span class="pre">Chart</span></code></a>, which takes a
+<p>The fundamental object in Altair is the <a class="reference internal" href="../user_guide/API.html#altair.Chart" title="altair.Chart"><code class="xref py py-class docutils literal notranslate"><span class="pre">Chart</span></code></a>, which takes a
 dataframe as a single argument:</p>
-<div class="highlight-python" id="starting-rst-altair-source-1"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">altair</span> <span class="kn">as</span> <span class="nn">alt</span>
+<div class="highlight-python notranslate" id="starting-rst-altair-source-1"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">altair</span> <span class="kn">as</span> <span class="nn">alt</span>
 <span class="n">chart</span> <span class="o">=</span> <span class="n">alt</span><span class="o">.</span><span class="n">Chart</span><span class="p">(</span><span class="n">data</span><span class="p">)</span>
 </pre></div>
 </div>
@@ -261,10 +250,10 @@ to <em>do</em> anything with the data. That will come next.</p>
 <div class="section" id="encodings-and-marks">
 <span id="basic-tutorial-encodings-and-marks"></span><h2>Encodings and Marks<a class="headerlink" href="#encodings-and-marks" title="Permalink to this headline">¶</a></h2>
 <p>With this chart object in hand, we can now specify how we would like the
-data to be visualized. This is done via the <code class="docutils literal"><span class="pre">mark</span></code> attribute of the chart
-object, which is most conveniently accessed via the <code class="docutils literal"><span class="pre">Chart.mark_*</span></code> methods.
-For example, we can show the data as a point using <code class="xref py py-meth docutils literal"><span class="pre">mark_point()</span></code>:</p>
-<div class="highlight-python" id="starting-rst-altair-source-2"><div class="highlight"><pre><span></span><span class="n">alt</span><span class="o">.</span><span class="n">Chart</span><span class="p">(</span><span class="n">data</span><span class="p">)</span><span class="o">.</span><span class="n">mark_point</span><span class="p">()</span>
+data to be visualized. This is done via the <code class="docutils literal notranslate"><span class="pre">mark</span></code> attribute of the chart
+object, which is most conveniently accessed via the <code class="docutils literal notranslate"><span class="pre">Chart.mark_*</span></code> methods.
+For example, we can show the data as a point using <code class="xref py py-meth docutils literal notranslate"><span class="pre">mark_point()</span></code>:</p>
+<div class="highlight-python notranslate" id="starting-rst-altair-source-2"><div class="highlight"><pre><span></span><span class="n">alt</span><span class="o">.</span><span class="n">Chart</span><span class="p">(</span><span class="n">data</span><span class="p">)</span><span class="o">.</span><span class="n">mark_point</span><span class="p">()</span>
 </pre></div>
 </div>
 
@@ -273,13 +262,13 @@ For example, we can show the data as a point using <code class="xref py py-meth 
   // embed when document is loaded, to ensure vega library is available
   // this works on all modern browsers, except IE8 and older
   document.addEventListener("DOMContentLoaded", function(event) {
-      var spec = {"config": {"view": {"width": 400, "height": 300}}, "data": {"values": [{"a": "C", "b": 2}, {"a": "C", "b": 7}, {"a": "C", "b": 4}, {"a": "D", "b": 1}, {"a": "D", "b": 2}, {"a": "D", "b": 6}, {"a": "E", "b": 8}, {"a": "E", "b": 4}, {"a": "E", "b": 7}]}, "mark": "point", "$schema": "https://vega.github.io/schema/vega-lite/v2.4.3.json"};
+      var spec = {"config": {"view": {"width": 400, "height": 300}}, "data": {"values": [{"a": "C", "b": 2}, {"a": "C", "b": 7}, {"a": "C", "b": 4}, {"a": "D", "b": 1}, {"a": "D", "b": 2}, {"a": "D", "b": 6}, {"a": "E", "b": 8}, {"a": "E", "b": 4}, {"a": "E", "b": 7}]}, "mark": "point", "$schema": "https://vega.github.io/schema/vega-lite/v2.6.0.json"};
       var opt = {
         "mode": "vega-lite",
         "renderer": "canvas",
         "actions": {"editor": true, "source": true, "export": true}
       };
-      vegaEmbed('#starting-rst-altair-plot-2', {"config": {"view": {"width": 400, "height": 300}}, "data": {"values": [{"a": "C", "b": 2}, {"a": "C", "b": 7}, {"a": "C", "b": 4}, {"a": "D", "b": 1}, {"a": "D", "b": 2}, {"a": "D", "b": 6}, {"a": "E", "b": 8}, {"a": "E", "b": 4}, {"a": "E", "b": 7}]}, "mark": "point", "$schema": "https://vega.github.io/schema/vega-lite/v2.4.3.json"}).catch(console.err);
+      vegaEmbed('#starting-rst-altair-plot-2', {"config": {"view": {"width": 400, "height": 300}}, "data": {"values": [{"a": "C", "b": 2}, {"a": "C", "b": 7}, {"a": "C", "b": 4}, {"a": "D", "b": 1}, {"a": "D", "b": 2}, {"a": "D", "b": 6}, {"a": "E", "b": 8}, {"a": "E", "b": 4}, {"a": "E", "b": 7}]}, "mark": "point", "$schema": "https://vega.github.io/schema/vega-lite/v2.6.0.json"}).catch(console.err);
   });
 </script>
 </div><p>Here the rendering consists of one point per row in the dataset, all plotted
@@ -287,10 +276,10 @@ on top of each other, since we have not yet specified positions for these
 points.</p>
 <p>To visually separate the points, we can map various <em>encoding channels</em>, or
 <em>channels</em> for short, to columns in the dataset.
-For example, we could <em>encode</em> the variable <code class="docutils literal"><span class="pre">a</span></code> of the data with the
-<code class="docutils literal"><span class="pre">x</span></code> channel, which represents the x-axis position of the points.
-This can be done straightforwardly via the <code class="xref py py-meth docutils literal"><span class="pre">Chart.encode()</span></code> method:</p>
-<div class="highlight-python" id="starting-rst-altair-source-3"><div class="highlight"><pre><span></span><span class="n">alt</span><span class="o">.</span><span class="n">Chart</span><span class="p">(</span><span class="n">data</span><span class="p">)</span><span class="o">.</span><span class="n">mark_point</span><span class="p">()</span><span class="o">.</span><span class="n">encode</span><span class="p">(</span>
+For example, we could <em>encode</em> the variable <code class="docutils literal notranslate"><span class="pre">a</span></code> of the data with the
+<code class="docutils literal notranslate"><span class="pre">x</span></code> channel, which represents the x-axis position of the points.
+This can be done straightforwardly via the <code class="xref py py-meth docutils literal notranslate"><span class="pre">Chart.encode()</span></code> method:</p>
+<div class="highlight-python notranslate" id="starting-rst-altair-source-3"><div class="highlight"><pre><span></span><span class="n">alt</span><span class="o">.</span><span class="n">Chart</span><span class="p">(</span><span class="n">data</span><span class="p">)</span><span class="o">.</span><span class="n">mark_point</span><span class="p">()</span><span class="o">.</span><span class="n">encode</span><span class="p">(</span>
     <span class="n">x</span><span class="o">=</span><span class="s1">&#39;a&#39;</span><span class="p">,</span>
 <span class="p">)</span>
 </pre></div>
@@ -301,25 +290,25 @@ This can be done straightforwardly via the <code class="xref py py-meth docutils
   // embed when document is loaded, to ensure vega library is available
   // this works on all modern browsers, except IE8 and older
   document.addEventListener("DOMContentLoaded", function(event) {
-      var spec = {"config": {"view": {"width": 400, "height": 300}}, "data": {"values": [{"a": "C", "b": 2}, {"a": "C", "b": 7}, {"a": "C", "b": 4}, {"a": "D", "b": 1}, {"a": "D", "b": 2}, {"a": "D", "b": 6}, {"a": "E", "b": 8}, {"a": "E", "b": 4}, {"a": "E", "b": 7}]}, "mark": "point", "encoding": {"x": {"type": "nominal", "field": "a"}}, "$schema": "https://vega.github.io/schema/vega-lite/v2.4.3.json"};
+      var spec = {"config": {"view": {"width": 400, "height": 300}}, "data": {"values": [{"a": "C", "b": 2}, {"a": "C", "b": 7}, {"a": "C", "b": 4}, {"a": "D", "b": 1}, {"a": "D", "b": 2}, {"a": "D", "b": 6}, {"a": "E", "b": 8}, {"a": "E", "b": 4}, {"a": "E", "b": 7}]}, "mark": "point", "encoding": {"x": {"type": "nominal", "field": "a"}}, "$schema": "https://vega.github.io/schema/vega-lite/v2.6.0.json"};
       var opt = {
         "mode": "vega-lite",
         "renderer": "canvas",
         "actions": {"editor": true, "source": true, "export": true}
       };
-      vegaEmbed('#starting-rst-altair-plot-3', {"config": {"view": {"width": 400, "height": 300}}, "data": {"values": [{"a": "C", "b": 2}, {"a": "C", "b": 7}, {"a": "C", "b": 4}, {"a": "D", "b": 1}, {"a": "D", "b": 2}, {"a": "D", "b": 6}, {"a": "E", "b": 8}, {"a": "E", "b": 4}, {"a": "E", "b": 7}]}, "mark": "point", "encoding": {"x": {"type": "nominal", "field": "a"}}, "$schema": "https://vega.github.io/schema/vega-lite/v2.4.3.json"}).catch(console.err);
+      vegaEmbed('#starting-rst-altair-plot-3', {"config": {"view": {"width": 400, "height": 300}}, "data": {"values": [{"a": "C", "b": 2}, {"a": "C", "b": 7}, {"a": "C", "b": 4}, {"a": "D", "b": 1}, {"a": "D", "b": 2}, {"a": "D", "b": 6}, {"a": "E", "b": 8}, {"a": "E", "b": 4}, {"a": "E", "b": 7}]}, "mark": "point", "encoding": {"x": {"type": "nominal", "field": "a"}}, "$schema": "https://vega.github.io/schema/vega-lite/v2.6.0.json"}).catch(console.err);
   });
 </script>
-</div><p>The <code class="docutils literal"><span class="pre">encode()</span></code> method builds a key-value mapping between encoding channels
-(such as <code class="docutils literal"><span class="pre">x</span></code>, <code class="docutils literal"><span class="pre">y</span></code>, <code class="docutils literal"><span class="pre">color</span></code>, <code class="docutils literal"><span class="pre">shape</span></code>, <code class="docutils literal"><span class="pre">size</span></code>, etc.) to columns in
+</div><p>The <code class="docutils literal notranslate"><span class="pre">encode()</span></code> method builds a key-value mapping between encoding channels
+(such as <code class="docutils literal notranslate"><span class="pre">x</span></code>, <code class="docutils literal notranslate"><span class="pre">y</span></code>, <code class="docutils literal notranslate"><span class="pre">color</span></code>, <code class="docutils literal notranslate"><span class="pre">shape</span></code>, <code class="docutils literal notranslate"><span class="pre">size</span></code>, etc.) to columns in
 the dataset, accessed by column name.</p>
 <p>For pandas dataframes, Altair automatically determines the appropriate data
 type for the mapped column, which in this case is a <em>nominal</em> value, or an
 unordered categorical.</p>
 <p>Though we’ve now separated the data by one attribute, we still have multiple
 points overlapping within each category. Let’s further separate these by
-adding a <code class="docutils literal"><span class="pre">y</span></code> encoding channel, mapped to the <code class="docutils literal"><span class="pre">&quot;b&quot;</span></code> column:</p>
-<div class="highlight-python" id="starting-rst-altair-source-4"><div class="highlight"><pre><span></span><span class="n">alt</span><span class="o">.</span><span class="n">Chart</span><span class="p">(</span><span class="n">data</span><span class="p">)</span><span class="o">.</span><span class="n">mark_point</span><span class="p">()</span><span class="o">.</span><span class="n">encode</span><span class="p">(</span>
+adding a <code class="docutils literal notranslate"><span class="pre">y</span></code> encoding channel, mapped to the <code class="docutils literal notranslate"><span class="pre">&quot;b&quot;</span></code> column:</p>
+<div class="highlight-python notranslate" id="starting-rst-altair-source-4"><div class="highlight"><pre><span></span><span class="n">alt</span><span class="o">.</span><span class="n">Chart</span><span class="p">(</span><span class="n">data</span><span class="p">)</span><span class="o">.</span><span class="n">mark_point</span><span class="p">()</span><span class="o">.</span><span class="n">encode</span><span class="p">(</span>
     <span class="n">x</span><span class="o">=</span><span class="s1">&#39;a&#39;</span><span class="p">,</span>
     <span class="n">y</span><span class="o">=</span><span class="s1">&#39;b&#39;</span>
 <span class="p">)</span>
@@ -331,16 +320,16 @@ adding a <code class="docutils literal"><span class="pre">y</span></code> encodi
   // embed when document is loaded, to ensure vega library is available
   // this works on all modern browsers, except IE8 and older
   document.addEventListener("DOMContentLoaded", function(event) {
-      var spec = {"config": {"view": {"width": 400, "height": 300}}, "data": {"values": [{"a": "C", "b": 2}, {"a": "C", "b": 7}, {"a": "C", "b": 4}, {"a": "D", "b": 1}, {"a": "D", "b": 2}, {"a": "D", "b": 6}, {"a": "E", "b": 8}, {"a": "E", "b": 4}, {"a": "E", "b": 7}]}, "mark": "point", "encoding": {"x": {"type": "nominal", "field": "a"}, "y": {"type": "quantitative", "field": "b"}}, "$schema": "https://vega.github.io/schema/vega-lite/v2.4.3.json"};
+      var spec = {"config": {"view": {"width": 400, "height": 300}}, "data": {"values": [{"a": "C", "b": 2}, {"a": "C", "b": 7}, {"a": "C", "b": 4}, {"a": "D", "b": 1}, {"a": "D", "b": 2}, {"a": "D", "b": 6}, {"a": "E", "b": 8}, {"a": "E", "b": 4}, {"a": "E", "b": 7}]}, "mark": "point", "encoding": {"x": {"type": "nominal", "field": "a"}, "y": {"type": "quantitative", "field": "b"}}, "$schema": "https://vega.github.io/schema/vega-lite/v2.6.0.json"};
       var opt = {
         "mode": "vega-lite",
         "renderer": "canvas",
         "actions": {"editor": true, "source": true, "export": true}
       };
-      vegaEmbed('#starting-rst-altair-plot-4', {"config": {"view": {"width": 400, "height": 300}}, "data": {"values": [{"a": "C", "b": 2}, {"a": "C", "b": 7}, {"a": "C", "b": 4}, {"a": "D", "b": 1}, {"a": "D", "b": 2}, {"a": "D", "b": 6}, {"a": "E", "b": 8}, {"a": "E", "b": 4}, {"a": "E", "b": 7}]}, "mark": "point", "encoding": {"x": {"type": "nominal", "field": "a"}, "y": {"type": "quantitative", "field": "b"}}, "$schema": "https://vega.github.io/schema/vega-lite/v2.4.3.json"}).catch(console.err);
+      vegaEmbed('#starting-rst-altair-plot-4', {"config": {"view": {"width": 400, "height": 300}}, "data": {"values": [{"a": "C", "b": 2}, {"a": "C", "b": 7}, {"a": "C", "b": 4}, {"a": "D", "b": 1}, {"a": "D", "b": 2}, {"a": "D", "b": 6}, {"a": "E", "b": 8}, {"a": "E", "b": 4}, {"a": "E", "b": 7}]}, "mark": "point", "encoding": {"x": {"type": "nominal", "field": "a"}, "y": {"type": "quantitative", "field": "b"}}, "$schema": "https://vega.github.io/schema/vega-lite/v2.6.0.json"}).catch(console.err);
   });
 </script>
-</div><p>The type of the data in the <code class="docutils literal"><span class="pre">&quot;b&quot;</span></code> column is again automatically-inferred
+</div><p>The type of the data in the <code class="docutils literal notranslate"><span class="pre">&quot;b&quot;</span></code> column is again automatically-inferred
 by altair, and this time is treated as a <em>quantitative</em> type (i.e. real-valued).
 Additionally, we see that grid lines and appropriate axis titles are
 automatically added as well.</p>
@@ -351,7 +340,7 @@ automatically added as well.</p>
 syntax for <em>aggregation</em> of data.
 For example, we can compute the average of all values by specifying this
 aggregate within the column identifier:</p>
-<div class="highlight-python" id="starting-rst-altair-source-5"><div class="highlight"><pre><span></span><span class="n">alt</span><span class="o">.</span><span class="n">Chart</span><span class="p">(</span><span class="n">data</span><span class="p">)</span><span class="o">.</span><span class="n">mark_point</span><span class="p">()</span><span class="o">.</span><span class="n">encode</span><span class="p">(</span>
+<div class="highlight-python notranslate" id="starting-rst-altair-source-5"><div class="highlight"><pre><span></span><span class="n">alt</span><span class="o">.</span><span class="n">Chart</span><span class="p">(</span><span class="n">data</span><span class="p">)</span><span class="o">.</span><span class="n">mark_point</span><span class="p">()</span><span class="o">.</span><span class="n">encode</span><span class="p">(</span>
     <span class="n">x</span><span class="o">=</span><span class="s1">&#39;a&#39;</span><span class="p">,</span>
     <span class="n">y</span><span class="o">=</span><span class="s1">&#39;average(b)&#39;</span>
 <span class="p">)</span>
@@ -363,21 +352,21 @@ aggregate within the column identifier:</p>
   // embed when document is loaded, to ensure vega library is available
   // this works on all modern browsers, except IE8 and older
   document.addEventListener("DOMContentLoaded", function(event) {
-      var spec = {"config": {"view": {"width": 400, "height": 300}}, "data": {"values": [{"a": "C", "b": 2}, {"a": "C", "b": 7}, {"a": "C", "b": 4}, {"a": "D", "b": 1}, {"a": "D", "b": 2}, {"a": "D", "b": 6}, {"a": "E", "b": 8}, {"a": "E", "b": 4}, {"a": "E", "b": 7}]}, "mark": "point", "encoding": {"x": {"type": "nominal", "field": "a"}, "y": {"type": "quantitative", "aggregate": "average", "field": "b"}}, "$schema": "https://vega.github.io/schema/vega-lite/v2.4.3.json"};
+      var spec = {"config": {"view": {"width": 400, "height": 300}}, "data": {"values": [{"a": "C", "b": 2}, {"a": "C", "b": 7}, {"a": "C", "b": 4}, {"a": "D", "b": 1}, {"a": "D", "b": 2}, {"a": "D", "b": 6}, {"a": "E", "b": 8}, {"a": "E", "b": 4}, {"a": "E", "b": 7}]}, "mark": "point", "encoding": {"x": {"type": "nominal", "field": "a"}, "y": {"type": "quantitative", "aggregate": "average", "field": "b"}}, "$schema": "https://vega.github.io/schema/vega-lite/v2.6.0.json"};
       var opt = {
         "mode": "vega-lite",
         "renderer": "canvas",
         "actions": {"editor": true, "source": true, "export": true}
       };
-      vegaEmbed('#starting-rst-altair-plot-5', {"config": {"view": {"width": 400, "height": 300}}, "data": {"values": [{"a": "C", "b": 2}, {"a": "C", "b": 7}, {"a": "C", "b": 4}, {"a": "D", "b": 1}, {"a": "D", "b": 2}, {"a": "D", "b": 6}, {"a": "E", "b": 8}, {"a": "E", "b": 4}, {"a": "E", "b": 7}]}, "mark": "point", "encoding": {"x": {"type": "nominal", "field": "a"}, "y": {"type": "quantitative", "aggregate": "average", "field": "b"}}, "$schema": "https://vega.github.io/schema/vega-lite/v2.4.3.json"}).catch(console.err);
+      vegaEmbed('#starting-rst-altair-plot-5', {"config": {"view": {"width": 400, "height": 300}}, "data": {"values": [{"a": "C", "b": 2}, {"a": "C", "b": 7}, {"a": "C", "b": 4}, {"a": "D", "b": 1}, {"a": "D", "b": 2}, {"a": "D", "b": 6}, {"a": "E", "b": 8}, {"a": "E", "b": 4}, {"a": "E", "b": 7}]}, "mark": "point", "encoding": {"x": {"type": "nominal", "field": "a"}, "y": {"type": "quantitative", "aggregate": "average", "field": "b"}}, "$schema": "https://vega.github.io/schema/vega-lite/v2.6.0.json"}).catch(console.err);
   });
 </script>
 </div><p>Now within each x-axis category, we see a single point reflecting the
 average of the values within that category.</p>
 <p>Typically, aggregated values are not represented by point markings,
-but by bar markings. We can do this by replacing <code class="xref py py-meth docutils literal"><span class="pre">mark_point()</span></code>
-with <code class="xref py py-meth docutils literal"><span class="pre">mark_bar()</span></code>:</p>
-<div class="highlight-python" id="starting-rst-altair-source-6"><div class="highlight"><pre><span></span><span class="n">alt</span><span class="o">.</span><span class="n">Chart</span><span class="p">(</span><span class="n">data</span><span class="p">)</span><span class="o">.</span><span class="n">mark_bar</span><span class="p">()</span><span class="o">.</span><span class="n">encode</span><span class="p">(</span>
+but by bar markings. We can do this by replacing <code class="xref py py-meth docutils literal notranslate"><span class="pre">mark_point()</span></code>
+with <code class="xref py py-meth docutils literal notranslate"><span class="pre">mark_bar()</span></code>:</p>
+<div class="highlight-python notranslate" id="starting-rst-altair-source-6"><div class="highlight"><pre><span></span><span class="n">alt</span><span class="o">.</span><span class="n">Chart</span><span class="p">(</span><span class="n">data</span><span class="p">)</span><span class="o">.</span><span class="n">mark_bar</span><span class="p">()</span><span class="o">.</span><span class="n">encode</span><span class="p">(</span>
     <span class="n">x</span><span class="o">=</span><span class="s1">&#39;a&#39;</span><span class="p">,</span>
     <span class="n">y</span><span class="o">=</span><span class="s1">&#39;average(b)&#39;</span>
 <span class="p">)</span>
@@ -389,19 +378,19 @@ with <code class="xref py py-meth docutils literal"><span class="pre">mark_bar()
   // embed when document is loaded, to ensure vega library is available
   // this works on all modern browsers, except IE8 and older
   document.addEventListener("DOMContentLoaded", function(event) {
-      var spec = {"config": {"view": {"width": 400, "height": 300}}, "data": {"values": [{"a": "C", "b": 2}, {"a": "C", "b": 7}, {"a": "C", "b": 4}, {"a": "D", "b": 1}, {"a": "D", "b": 2}, {"a": "D", "b": 6}, {"a": "E", "b": 8}, {"a": "E", "b": 4}, {"a": "E", "b": 7}]}, "mark": "bar", "encoding": {"x": {"type": "nominal", "field": "a"}, "y": {"type": "quantitative", "aggregate": "average", "field": "b"}}, "$schema": "https://vega.github.io/schema/vega-lite/v2.4.3.json"};
+      var spec = {"config": {"view": {"width": 400, "height": 300}}, "data": {"values": [{"a": "C", "b": 2}, {"a": "C", "b": 7}, {"a": "C", "b": 4}, {"a": "D", "b": 1}, {"a": "D", "b": 2}, {"a": "D", "b": 6}, {"a": "E", "b": 8}, {"a": "E", "b": 4}, {"a": "E", "b": 7}]}, "mark": "bar", "encoding": {"x": {"type": "nominal", "field": "a"}, "y": {"type": "quantitative", "aggregate": "average", "field": "b"}}, "$schema": "https://vega.github.io/schema/vega-lite/v2.6.0.json"};
       var opt = {
         "mode": "vega-lite",
         "renderer": "canvas",
         "actions": {"editor": true, "source": true, "export": true}
       };
-      vegaEmbed('#starting-rst-altair-plot-6', {"config": {"view": {"width": 400, "height": 300}}, "data": {"values": [{"a": "C", "b": 2}, {"a": "C", "b": 7}, {"a": "C", "b": 4}, {"a": "D", "b": 1}, {"a": "D", "b": 2}, {"a": "D", "b": 6}, {"a": "E", "b": 8}, {"a": "E", "b": 4}, {"a": "E", "b": 7}]}, "mark": "bar", "encoding": {"x": {"type": "nominal", "field": "a"}, "y": {"type": "quantitative", "aggregate": "average", "field": "b"}}, "$schema": "https://vega.github.io/schema/vega-lite/v2.4.3.json"}).catch(console.err);
+      vegaEmbed('#starting-rst-altair-plot-6', {"config": {"view": {"width": 400, "height": 300}}, "data": {"values": [{"a": "C", "b": 2}, {"a": "C", "b": 7}, {"a": "C", "b": 4}, {"a": "D", "b": 1}, {"a": "D", "b": 2}, {"a": "D", "b": 6}, {"a": "E", "b": 8}, {"a": "E", "b": 4}, {"a": "E", "b": 7}]}, "mark": "bar", "encoding": {"x": {"type": "nominal", "field": "a"}, "y": {"type": "quantitative", "aggregate": "average", "field": "b"}}, "$schema": "https://vega.github.io/schema/vega-lite/v2.6.0.json"}).catch(console.err);
   });
 </script>
-</div><p>Because the categorical feature is mapped to the <code class="docutils literal"><span class="pre">x</span></code>-axis, the result is
+</div><p>Because the categorical feature is mapped to the <code class="docutils literal notranslate"><span class="pre">x</span></code>-axis, the result is
 a vertical bar chart. To get a horizontal bar chart, all we need is to
-swap the <code class="docutils literal"><span class="pre">x</span></code> and <code class="docutils literal"><span class="pre">y</span></code> keywords:</p>
-<div class="highlight-python" id="starting-rst-altair-source-7"><div class="highlight"><pre><span></span><span class="n">alt</span><span class="o">.</span><span class="n">Chart</span><span class="p">(</span><span class="n">data</span><span class="p">)</span><span class="o">.</span><span class="n">mark_bar</span><span class="p">()</span><span class="o">.</span><span class="n">encode</span><span class="p">(</span>
+swap the <code class="docutils literal notranslate"><span class="pre">x</span></code> and <code class="docutils literal notranslate"><span class="pre">y</span></code> keywords:</p>
+<div class="highlight-python notranslate" id="starting-rst-altair-source-7"><div class="highlight"><pre><span></span><span class="n">alt</span><span class="o">.</span><span class="n">Chart</span><span class="p">(</span><span class="n">data</span><span class="p">)</span><span class="o">.</span><span class="n">mark_bar</span><span class="p">()</span><span class="o">.</span><span class="n">encode</span><span class="p">(</span>
     <span class="n">y</span><span class="o">=</span><span class="s1">&#39;a&#39;</span><span class="p">,</span>
     <span class="n">x</span><span class="o">=</span><span class="s1">&#39;average(b)&#39;</span>
 <span class="p">)</span>
@@ -413,22 +402,22 @@ swap the <code class="docutils literal"><span class="pre">x</span></code> and <c
   // embed when document is loaded, to ensure vega library is available
   // this works on all modern browsers, except IE8 and older
   document.addEventListener("DOMContentLoaded", function(event) {
-      var spec = {"config": {"view": {"width": 400, "height": 300}}, "data": {"values": [{"a": "C", "b": 2}, {"a": "C", "b": 7}, {"a": "C", "b": 4}, {"a": "D", "b": 1}, {"a": "D", "b": 2}, {"a": "D", "b": 6}, {"a": "E", "b": 8}, {"a": "E", "b": 4}, {"a": "E", "b": 7}]}, "mark": "bar", "encoding": {"x": {"type": "quantitative", "aggregate": "average", "field": "b"}, "y": {"type": "nominal", "field": "a"}}, "$schema": "https://vega.github.io/schema/vega-lite/v2.4.3.json"};
+      var spec = {"config": {"view": {"width": 400, "height": 300}}, "data": {"values": [{"a": "C", "b": 2}, {"a": "C", "b": 7}, {"a": "C", "b": 4}, {"a": "D", "b": 1}, {"a": "D", "b": 2}, {"a": "D", "b": 6}, {"a": "E", "b": 8}, {"a": "E", "b": 4}, {"a": "E", "b": 7}]}, "mark": "bar", "encoding": {"x": {"type": "quantitative", "aggregate": "average", "field": "b"}, "y": {"type": "nominal", "field": "a"}}, "$schema": "https://vega.github.io/schema/vega-lite/v2.6.0.json"};
       var opt = {
         "mode": "vega-lite",
         "renderer": "canvas",
         "actions": {"editor": true, "source": true, "export": true}
       };
-      vegaEmbed('#starting-rst-altair-plot-7', {"config": {"view": {"width": 400, "height": 300}}, "data": {"values": [{"a": "C", "b": 2}, {"a": "C", "b": 7}, {"a": "C", "b": 4}, {"a": "D", "b": 1}, {"a": "D", "b": 2}, {"a": "D", "b": 6}, {"a": "E", "b": 8}, {"a": "E", "b": 4}, {"a": "E", "b": 7}]}, "mark": "bar", "encoding": {"x": {"type": "quantitative", "aggregate": "average", "field": "b"}, "y": {"type": "nominal", "field": "a"}}, "$schema": "https://vega.github.io/schema/vega-lite/v2.4.3.json"}).catch(console.err);
+      vegaEmbed('#starting-rst-altair-plot-7', {"config": {"view": {"width": 400, "height": 300}}, "data": {"values": [{"a": "C", "b": 2}, {"a": "C", "b": 7}, {"a": "C", "b": 4}, {"a": "D", "b": 1}, {"a": "D", "b": 2}, {"a": "D", "b": 6}, {"a": "E", "b": 8}, {"a": "E", "b": 4}, {"a": "E", "b": 7}]}, "mark": "bar", "encoding": {"x": {"type": "quantitative", "aggregate": "average", "field": "b"}, "y": {"type": "nominal", "field": "a"}}, "$schema": "https://vega.github.io/schema/vega-lite/v2.6.0.json"}).catch(console.err);
   });
 </script>
 </div><div class="section" id="aside-examining-the-json-output">
 <h3>Aside: Examining the JSON Output<a class="headerlink" href="#aside-examining-the-json-output" title="Permalink to this headline">¶</a></h3>
 <p>Recall that Altair’s main purpose is to convert plot specifications to a JSON
 string that conforms to the Vega-Lite schema.
-It is instructive here to use the <code class="xref py py-meth docutils literal"><span class="pre">to_json()</span></code> method to inspect the
+It is instructive here to use the <code class="xref py py-meth docutils literal notranslate"><span class="pre">to_json()</span></code> method to inspect the
 JSON specification that Altair is exporting and sending as JSON to Vega-Lite:</p>
-<div class="highlight-python" id="starting-rst-altair-source-8"><div class="highlight"><pre><span></span><span class="n">chart</span> <span class="o">=</span> <span class="n">alt</span><span class="o">.</span><span class="n">Chart</span><span class="p">(</span><span class="n">data</span><span class="p">)</span><span class="o">.</span><span class="n">mark_bar</span><span class="p">()</span><span class="o">.</span><span class="n">encode</span><span class="p">(</span>
+<div class="highlight-python notranslate" id="starting-rst-altair-source-8"><div class="highlight"><pre><span></span><span class="n">chart</span> <span class="o">=</span> <span class="n">alt</span><span class="o">.</span><span class="n">Chart</span><span class="p">(</span><span class="n">data</span><span class="p">)</span><span class="o">.</span><span class="n">mark_bar</span><span class="p">()</span><span class="o">.</span><span class="n">encode</span><span class="p">(</span>
     <span class="n">x</span><span class="o">=</span><span class="s1">&#39;a&#39;</span><span class="p">,</span>
     <span class="n">y</span><span class="o">=</span><span class="s1">&#39;average(b)&#39;</span><span class="p">,</span>
 <span class="p">)</span>
@@ -436,8 +425,8 @@ JSON specification that Altair is exporting and sending as JSON to Vega-Lite:</p
 </pre></div>
 </div>
 <div class="admonition">
-<div class="first last highlight-none"><div class="highlight"><pre><span></span>{
-  &quot;$schema&quot;: &quot;https://vega.github.io/schema/vega-lite/v2.4.3.json&quot;,
+<div class="first last highlight-none notranslate"><div class="highlight"><pre><span></span>{
+  &quot;$schema&quot;: &quot;https://vega.github.io/schema/vega-lite/v2.6.0.json&quot;,
   &quot;config&quot;: {
     &quot;view&quot;: {
       &quot;height&quot;: 300,
@@ -499,18 +488,18 @@ JSON specification that Altair is exporting and sending as JSON to Vega-Lite:</p
 }
 </pre></div>
 </div>
-<p>Notice here that <code class="docutils literal"><span class="pre">encode(x='a')</span></code> has been expanded to a JSON structure with
-a <code class="docutils literal"><span class="pre">field</span></code> name, and a <code class="docutils literal"><span class="pre">type</span></code> for the data.
-The <code class="docutils literal"><span class="pre">encode(y='b')</span></code> has been expanded similarly and includes an <code class="docutils literal"><span class="pre">aggregate</span></code>
+<p>Notice here that <code class="docutils literal notranslate"><span class="pre">encode(x='a')</span></code> has been expanded to a JSON structure with
+a <code class="docutils literal notranslate"><span class="pre">field</span></code> name, and a <code class="docutils literal notranslate"><span class="pre">type</span></code> for the data.
+The <code class="docutils literal notranslate"><span class="pre">encode(y='b')</span></code> has been expanded similarly and includes an <code class="docutils literal notranslate"><span class="pre">aggregate</span></code>
 field.</p>
 <p>Altair’s full shorthand syntax includes a way to specify the type of the
 column as well:</p>
-<div class="highlight-python" id="starting-rst-altair-source-9"><div class="highlight"><pre><span></span><span class="n">y</span> <span class="o">=</span> <span class="n">alt</span><span class="o">.</span><span class="n">Y</span><span class="p">(</span><span class="s1">&#39;average(b):Q&#39;</span><span class="p">)</span>
+<div class="highlight-python notranslate" id="starting-rst-altair-source-9"><div class="highlight"><pre><span></span><span class="n">y</span> <span class="o">=</span> <span class="n">alt</span><span class="o">.</span><span class="n">Y</span><span class="p">(</span><span class="s1">&#39;average(b):Q&#39;</span><span class="p">)</span>
 <span class="k">print</span><span class="p">(</span><span class="n">y</span><span class="o">.</span><span class="n">to_json</span><span class="p">())</span>
 </pre></div>
 </div>
 <div class="admonition">
-<div class="first last highlight-none"><div class="highlight"><pre><span></span>{
+<div class="first last highlight-none notranslate"><div class="highlight"><pre><span></span>{
   &quot;aggregate&quot;: &quot;average&quot;,
   &quot;field&quot;: &quot;b&quot;,
   &quot;type&quot;: &quot;quantitative&quot;
@@ -518,14 +507,14 @@ column as well:</p>
 </pre></div>
 </div>
 <p>This short-hand is equivalent to spelling-out the attributes by name:</p>
-<div class="highlight-python" id="starting-rst-altair-source-10"><div class="highlight"><pre><span></span><span class="n">y</span> <span class="o">=</span> <span class="n">alt</span><span class="o">.</span><span class="n">Y</span><span class="p">(</span><span class="n">field</span><span class="o">=</span><span class="s1">&#39;b&#39;</span><span class="p">,</span> <span class="nb">type</span><span class="o">=</span><span class="s1">&#39;quantitative&#39;</span><span class="p">,</span> <span class="n">aggregate</span><span class="o">=</span><span class="s1">&#39;average&#39;</span><span class="p">)</span>
+<div class="highlight-python notranslate" id="starting-rst-altair-source-10"><div class="highlight"><pre><span></span><span class="n">y</span> <span class="o">=</span> <span class="n">alt</span><span class="o">.</span><span class="n">Y</span><span class="p">(</span><span class="n">field</span><span class="o">=</span><span class="s1">&#39;b&#39;</span><span class="p">,</span> <span class="nb">type</span><span class="o">=</span><span class="s1">&#39;quantitative&#39;</span><span class="p">,</span> <span class="n">aggregate</span><span class="o">=</span><span class="s1">&#39;average&#39;</span><span class="p">)</span>
 <span class="k">print</span><span class="p">(</span><span class="n">y</span><span class="o">.</span><span class="n">to_json</span><span class="p">())</span>
 </pre></div>
 </div>
 <p>This more verbose means of specifying channels can be used directly in
 Altair chart specifications, a fact that becomes useful when using some
 of the more advanced field configurations:</p>
-<div class="highlight-python" id="starting-rst-altair-source-11"><div class="highlight"><pre><span></span><span class="n">alt</span><span class="o">.</span><span class="n">Chart</span><span class="p">(</span><span class="n">data</span><span class="p">)</span><span class="o">.</span><span class="n">mark_bar</span><span class="p">()</span><span class="o">.</span><span class="n">encode</span><span class="p">(</span>
+<div class="highlight-python notranslate" id="starting-rst-altair-source-11"><div class="highlight"><pre><span></span><span class="n">alt</span><span class="o">.</span><span class="n">Chart</span><span class="p">(</span><span class="n">data</span><span class="p">)</span><span class="o">.</span><span class="n">mark_bar</span><span class="p">()</span><span class="o">.</span><span class="n">encode</span><span class="p">(</span>
     <span class="n">alt</span><span class="o">.</span><span class="n">Y</span><span class="p">(</span><span class="s1">&#39;a&#39;</span><span class="p">,</span> <span class="nb">type</span><span class="o">=</span><span class="s1">&#39;nominal&#39;</span><span class="p">),</span>
     <span class="n">alt</span><span class="o">.</span><span class="n">X</span><span class="p">(</span><span class="s1">&#39;b&#39;</span><span class="p">,</span> <span class="nb">type</span><span class="o">=</span><span class="s1">&#39;quantitative&#39;</span><span class="p">,</span> <span class="n">aggregate</span><span class="o">=</span><span class="s1">&#39;average&#39;</span><span class="p">)</span>
 <span class="p">)</span>
@@ -537,13 +526,13 @@ of the more advanced field configurations:</p>
   // embed when document is loaded, to ensure vega library is available
   // this works on all modern browsers, except IE8 and older
   document.addEventListener("DOMContentLoaded", function(event) {
-      var spec = {"config": {"view": {"width": 400, "height": 300}}, "data": {"values": [{"a": "C", "b": 2}, {"a": "C", "b": 7}, {"a": "C", "b": 4}, {"a": "D", "b": 1}, {"a": "D", "b": 2}, {"a": "D", "b": 6}, {"a": "E", "b": 8}, {"a": "E", "b": 4}, {"a": "E", "b": 7}]}, "mark": "bar", "encoding": {"x": {"type": "quantitative", "aggregate": "average", "field": "b"}, "y": {"type": "nominal", "field": "a"}}, "$schema": "https://vega.github.io/schema/vega-lite/v2.4.3.json"};
+      var spec = {"config": {"view": {"width": 400, "height": 300}}, "data": {"values": [{"a": "C", "b": 2}, {"a": "C", "b": 7}, {"a": "C", "b": 4}, {"a": "D", "b": 1}, {"a": "D", "b": 2}, {"a": "D", "b": 6}, {"a": "E", "b": 8}, {"a": "E", "b": 4}, {"a": "E", "b": 7}]}, "mark": "bar", "encoding": {"x": {"type": "quantitative", "aggregate": "average", "field": "b"}, "y": {"type": "nominal", "field": "a"}}, "$schema": "https://vega.github.io/schema/vega-lite/v2.6.0.json"};
       var opt = {
         "mode": "vega-lite",
         "renderer": "canvas",
         "actions": {"editor": true, "source": true, "export": true}
       };
-      vegaEmbed('#starting-rst-altair-plot-11', {"config": {"view": {"width": 400, "height": 300}}, "data": {"values": [{"a": "C", "b": 2}, {"a": "C", "b": 7}, {"a": "C", "b": 4}, {"a": "D", "b": 1}, {"a": "D", "b": 2}, {"a": "D", "b": 6}, {"a": "E", "b": 8}, {"a": "E", "b": 4}, {"a": "E", "b": 7}]}, "mark": "bar", "encoding": {"x": {"type": "quantitative", "aggregate": "average", "field": "b"}, "y": {"type": "nominal", "field": "a"}}, "$schema": "https://vega.github.io/schema/vega-lite/v2.4.3.json"}).catch(console.err);
+      vegaEmbed('#starting-rst-altair-plot-11', {"config": {"view": {"width": 400, "height": 300}}, "data": {"values": [{"a": "C", "b": 2}, {"a": "C", "b": 7}, {"a": "C", "b": 4}, {"a": "D", "b": 1}, {"a": "D", "b": 2}, {"a": "D", "b": 6}, {"a": "E", "b": 8}, {"a": "E", "b": 4}, {"a": "E", "b": 7}]}, "mark": "bar", "encoding": {"x": {"type": "quantitative", "aggregate": "average", "field": "b"}, "y": {"type": "nominal", "field": "a"}}, "$schema": "https://vega.github.io/schema/vega-lite/v2.6.0.json"}).catch(console.err);
   });
 </script>
 </div></div>
@@ -553,11 +542,11 @@ of the more advanced field configurations:</p>
 <p>By default, Altair via Vega-Lite makes some choices about default properties
 of the visualization.
 Altair also provides an API to customize the look of the visualization.
-For example, we can specify the axis titles using the <code class="docutils literal"><span class="pre">axis</span></code> attribute
+For example, we can specify the axis titles using the <code class="docutils literal notranslate"><span class="pre">axis</span></code> attribute
 of channel classes, and we can specify the color of the marking by setting
-the <code class="docutils literal"><span class="pre">color</span></code> keyword of the <code class="docutils literal"><span class="pre">Chart.mark_*</span></code> methods to any valid HTML
+the <code class="docutils literal notranslate"><span class="pre">color</span></code> keyword of the <code class="docutils literal notranslate"><span class="pre">Chart.mark_*</span></code> methods to any valid HTML
 color string:</p>
-<div class="highlight-python" id="starting-rst-altair-source-12"><div class="highlight"><pre><span></span><span class="n">alt</span><span class="o">.</span><span class="n">Chart</span><span class="p">(</span><span class="n">data</span><span class="p">)</span><span class="o">.</span><span class="n">mark_bar</span><span class="p">(</span><span class="n">color</span><span class="o">=</span><span class="s1">&#39;firebrick&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">encode</span><span class="p">(</span>
+<div class="highlight-python notranslate" id="starting-rst-altair-source-12"><div class="highlight"><pre><span></span><span class="n">alt</span><span class="o">.</span><span class="n">Chart</span><span class="p">(</span><span class="n">data</span><span class="p">)</span><span class="o">.</span><span class="n">mark_bar</span><span class="p">(</span><span class="n">color</span><span class="o">=</span><span class="s1">&#39;firebrick&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">encode</span><span class="p">(</span>
     <span class="n">alt</span><span class="o">.</span><span class="n">Y</span><span class="p">(</span><span class="s1">&#39;a&#39;</span><span class="p">,</span> <span class="n">axis</span><span class="o">=</span><span class="n">alt</span><span class="o">.</span><span class="n">Axis</span><span class="p">(</span><span class="n">title</span><span class="o">=</span><span class="s1">&#39;category&#39;</span><span class="p">)),</span>
     <span class="n">alt</span><span class="o">.</span><span class="n">X</span><span class="p">(</span><span class="s1">&#39;average(b)&#39;</span><span class="p">,</span> <span class="n">axis</span><span class="o">=</span><span class="n">alt</span><span class="o">.</span><span class="n">Axis</span><span class="p">(</span><span class="n">title</span><span class="o">=</span><span class="s1">&#39;avg(b) by category&#39;</span><span class="p">))</span>
 <span class="p">)</span>
@@ -569,13 +558,13 @@ color string:</p>
   // embed when document is loaded, to ensure vega library is available
   // this works on all modern browsers, except IE8 and older
   document.addEventListener("DOMContentLoaded", function(event) {
-      var spec = {"config": {"view": {"width": 400, "height": 300}}, "data": {"values": [{"a": "C", "b": 2}, {"a": "C", "b": 7}, {"a": "C", "b": 4}, {"a": "D", "b": 1}, {"a": "D", "b": 2}, {"a": "D", "b": 6}, {"a": "E", "b": 8}, {"a": "E", "b": 4}, {"a": "E", "b": 7}]}, "mark": {"type": "bar", "color": "firebrick"}, "encoding": {"x": {"type": "quantitative", "aggregate": "average", "axis": {"title": "avg(b) by category"}, "field": "b"}, "y": {"type": "nominal", "axis": {"title": "category"}, "field": "a"}}, "$schema": "https://vega.github.io/schema/vega-lite/v2.4.3.json"};
+      var spec = {"config": {"view": {"width": 400, "height": 300}}, "data": {"values": [{"a": "C", "b": 2}, {"a": "C", "b": 7}, {"a": "C", "b": 4}, {"a": "D", "b": 1}, {"a": "D", "b": 2}, {"a": "D", "b": 6}, {"a": "E", "b": 8}, {"a": "E", "b": 4}, {"a": "E", "b": 7}]}, "mark": {"type": "bar", "color": "firebrick"}, "encoding": {"x": {"type": "quantitative", "aggregate": "average", "axis": {"title": "avg(b) by category"}, "field": "b"}, "y": {"type": "nominal", "axis": {"title": "category"}, "field": "a"}}, "$schema": "https://vega.github.io/schema/vega-lite/v2.6.0.json"};
       var opt = {
         "mode": "vega-lite",
         "renderer": "canvas",
         "actions": {"editor": true, "source": true, "export": true}
       };
-      vegaEmbed('#starting-rst-altair-plot-12', {"config": {"view": {"width": 400, "height": 300}}, "data": {"values": [{"a": "C", "b": 2}, {"a": "C", "b": 7}, {"a": "C", "b": 4}, {"a": "D", "b": 1}, {"a": "D", "b": 2}, {"a": "D", "b": 6}, {"a": "E", "b": 8}, {"a": "E", "b": 4}, {"a": "E", "b": 7}]}, "mark": {"type": "bar", "color": "firebrick"}, "encoding": {"x": {"type": "quantitative", "aggregate": "average", "axis": {"title": "avg(b) by category"}, "field": "b"}, "y": {"type": "nominal", "axis": {"title": "category"}, "field": "a"}}, "$schema": "https://vega.github.io/schema/vega-lite/v2.4.3.json"}).catch(console.err);
+      vegaEmbed('#starting-rst-altair-plot-12', {"config": {"view": {"width": 400, "height": 300}}, "data": {"values": [{"a": "C", "b": 2}, {"a": "C", "b": 7}, {"a": "C", "b": 4}, {"a": "D", "b": 1}, {"a": "D", "b": 2}, {"a": "D", "b": 6}, {"a": "E", "b": 8}, {"a": "E", "b": 4}, {"a": "E", "b": 7}]}, "mark": {"type": "bar", "color": "firebrick"}, "encoding": {"x": {"type": "quantitative", "aggregate": "average", "axis": {"title": "avg(b) by category"}, "field": "b"}, "y": {"type": "nominal", "axis": {"title": "category"}, "field": "a"}}, "$schema": "https://vega.github.io/schema/vega-lite/v2.6.0.json"}).catch(console.err);
   });
 </script>
 </div></div>
@@ -585,8 +574,8 @@ color string:</p>
 somewhere on the web. This can be done straightforwardly using the
 <a class="reference external" href="https://github.com/vega/vega-embed">Vega-Embed</a> javascript package.
 A simple example of a stand-alone HTML document can be generated for any
-chart using the <code class="xref py py-meth docutils literal"><span class="pre">Chart.save()</span></code> method:</p>
-<div class="highlight-python"><div class="highlight"><pre><span></span><span class="n">chart</span> <span class="o">=</span> <span class="n">alt</span><span class="o">.</span><span class="n">Chart</span><span class="p">(</span><span class="n">data</span><span class="p">)</span><span class="o">.</span><span class="n">mark_bar</span><span class="p">()</span><span class="o">.</span><span class="n">encode</span><span class="p">(</span>
+chart using the <code class="xref py py-meth docutils literal notranslate"><span class="pre">Chart.save()</span></code> method:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">chart</span> <span class="o">=</span> <span class="n">alt</span><span class="o">.</span><span class="n">Chart</span><span class="p">(</span><span class="n">data</span><span class="p">)</span><span class="o">.</span><span class="n">mark_bar</span><span class="p">()</span><span class="o">.</span><span class="n">encode</span><span class="p">(</span>
     <span class="n">x</span><span class="o">=</span><span class="s1">&#39;a&#39;</span><span class="p">,</span>
     <span class="n">y</span><span class="o">=</span><span class="s1">&#39;average(b)&#39;</span><span class="p">,</span>
 <span class="p">)</span>
@@ -594,9 +583,9 @@ chart using the <code class="xref py py-meth docutils literal"><span class="pre"
 </pre></div>
 </div>
 <p>The basic HTML template produces output that looks like this, where the JSON
-specification for your plot produced by <code class="xref py py-meth docutils literal"><span class="pre">Chart.to_json()</span></code> should be stored
-in the <code class="docutils literal"><span class="pre">vlSpec</span></code> Javascript variable:</p>
-<div class="highlight-html"><div class="highlight"><pre><span></span><span class="cp">&lt;!DOCTYPE html&gt;</span>
+specification for your plot produced by <code class="xref py py-meth docutils literal notranslate"><span class="pre">Chart.to_json()</span></code> should be stored
+in the <code class="docutils literal notranslate"><span class="pre">vlSpec</span></code> Javascript variable:</p>
+<div class="highlight-html notranslate"><div class="highlight"><pre><span></span><span class="cp">&lt;!DOCTYPE html&gt;</span>
 <span class="p">&lt;</span><span class="nt">html</span><span class="p">&gt;</span>
   <span class="p">&lt;</span><span class="nt">head</span><span class="p">&gt;</span>
     <span class="p">&lt;</span><span class="nt">script</span> <span class="na">src</span><span class="o">=</span><span class="s">&quot;https://cdn.jsdelivr.net/npm/vega@3&quot;</span><span class="p">&gt;&lt;/</span><span class="nt">script</span><span class="p">&gt;</span>
@@ -614,7 +603,7 @@ in the <code class="docutils literal"><span class="pre">vlSpec</span></code> Jav
 <span class="p">&lt;/</span><span class="nt">html</span><span class="p">&gt;</span>
 </pre></div>
 </div>
-<p>The <code class="xref py py-meth docutils literal"><span class="pre">save()</span></code> method provides a convenient way to save such HTML
+<p>The <code class="xref py py-meth docutils literal notranslate"><span class="pre">save()</span></code> method provides a convenient way to save such HTML
 output to file.
 For more information on embedding Altair/Vega-Lite, see the documentation of the <a class="reference external" href="https://github.com/vega/vega-embed">Vega-Embed</a> project.</p>
 </div>
@@ -622,9 +611,7 @@ For more information on embedding Altair/Vega-Lite, see the documentation of the
 
 
            </div>
-           <div class="articleComments">
-            
-           </div>
+           
           </div>
           <footer>
   
@@ -646,7 +633,7 @@ For more information on embedding Altair/Vega-Lite, see the documentation of the
 
     </p>
   </div>
-  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
 
 </footer>
 
@@ -664,7 +651,8 @@ For more information on embedding Altair/Vega-Lite, see the documentation of the
     <script type="text/javascript">
         var DOCUMENTATION_OPTIONS = {
             URL_ROOT:'../',
-            VERSION:'2.1.0',
+            VERSION:'2.2.0dev0',
+            LANGUAGE:'None',
             COLLAPSE_INDEX:false,
             FILE_SUFFIX:'.html',
             HAS_SOURCE:  true,
@@ -680,19 +668,13 @@ For more information on embedding Altair/Vega-Lite, see the documentation of the
 
   
 
-  
-  
-    <script type="text/javascript" src="../_static/js/theme.js"></script>
-  
+  <script type="text/javascript" src="../_static/js/theme.js"></script>
 
-  
-  
   <script type="text/javascript">
       jQuery(function () {
-          SphinxRtdTheme.StickyNav.enable();
+          SphinxRtdTheme.Navigation.enable(true);
       });
-  </script>
-   
+  </script> 
 
 </body>
 </html>

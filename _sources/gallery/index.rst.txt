@@ -612,6 +612,11 @@ Case Studies
      <span class="image-title">Gapminder Bubble Plot</span>
    </a>
    
+   <a class="imagegroup" href="isotype.html">
+     <span class="image" alt="Isotype Visualization" style="background-image: url(/_static/isotype-thumb.png);"></span>
+     <span class="image-title">Isotype Visualization</span>
+   </a>
+   
    <a class="imagegroup" href="airports.html">
      <span class="image" alt="Locations of US Airports" style="background-image: url(/_static/airports-thumb.png);"></span>
      <span class="image-title">Locations of US Airports</span>
@@ -637,6 +642,11 @@ Case Studies
      <span class="image-title">Seattle Weather Interactive</span>
    </a>
    
+   <a class="imagegroup" href="top_k_letters.html">
+     <span class="image" alt="Top K Letters" style="background-image: url(/_static/top_k_letters-thumb.png);"></span>
+     <span class="image-title">Top K Letters</span>
+   </a>
+   
    <a class="imagegroup" href="us_state_capitals.html">
      <span class="image" alt="U.S. state capitals overlayed on a map of the U.S" style="background-image: url(/_static/us_state_capitals-thumb.png);"></span>
      <span class="image-title">U.S. state capitals overlayed on a map of the U.S</span>
@@ -645,6 +655,11 @@ Case Studies
    <a class="imagegroup" href="us_population_over_time.html">
      <span class="image" alt="US Population Over Time" style="background-image: url(/_static/us_population_over_time-thumb.png);"></span>
      <span class="image-title">US Population Over Time</span>
+   </a>
+   
+   <a class="imagegroup" href="us_population_pyramid_over_time.html">
+     <span class="image" alt="US Population Pyramid Over Time" style="background-image: url(/_static/us_population_pyramid_over_time-thumb.png);"></span>
+     <span class="image-title">US Population Pyramid Over Time</span>
    </a>
    
    </span>
@@ -659,13 +674,16 @@ Case Studies
   cumulative_wiki_donations
   falkensee
   gapminder_bubble_plot
+  isotype
   airports
   london_tube
   natural_disasters
   one_dot_per_zipcode
   seattle_weather_interactive
+  top_k_letters
   us_state_capitals
   us_population_over_time
+  us_population_pyramid_over_time
 
 
 

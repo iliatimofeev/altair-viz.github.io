@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>Trellis Scatter Plot &mdash; Altair 2.1.0 documentation</title>
+  <title>Trellis Scatter Plot &mdash; Altair 2.2.0dev0 documentation</title>
   
 
   
@@ -26,36 +26,23 @@
 
   
 
-  
-  
-    <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
-  
-
-  
-    <link rel="stylesheet" href="../_static/altair-plot.css" type="text/css" />
-  
-    <link rel="stylesheet" href="../_static/altair-gallery.css" type="text/css" />
-  
-    <link rel="stylesheet" href="../_static/theme_overrides.css" type="text/css" />
-  
-    <link rel="stylesheet" href="../_static/custom.css" type="text/css" />
-  
-
-  
-        <link rel="index" title="Index"
-              href="../genindex.html"/>
-        <link rel="search" title="Search" href="../search.html"/>
-    <link rel="top" title="Altair 2.1.0 documentation" href="../index.html"/>
-        <link rel="up" title="Example Gallery" href="index.html"/>
-        <link rel="next" title="Histogram with a Global Mean Overlay" href="histogram_with_a_global_mean_overlay.html"/>
-        <link rel="prev" title="Table Bubble Plot (Github Punch Card)" href="table_bubble_plot_github.html"/> 
+  <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/altair-plot.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/altair-gallery.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/theme_overrides.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/custom.css" type="text/css" />
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Histogram with a Global Mean Overlay" href="histogram_with_a_global_mean_overlay.html" />
+    <link rel="prev" title="Table Bubble Plot (Github Punch Card)" href="table_bubble_plot_github.html" /> 
 
   
   <script src="../_static/js/modernizr.min.js"></script>
 
 </head>
 
-<body class="wy-body-for-nav" role="document">
+<body class="wy-body-for-nav">
 
    
   <div class="wy-grid-for-nav">
@@ -72,7 +59,7 @@
 
           
             
-            <img src="../_static/altair-logo-light.png" class="logo" />
+            <img src="../_static/altair-logo-light.png" class="logo" alt="Logo"/>
           
           </a>
 
@@ -80,7 +67,7 @@
             
             
               <div class="version">
-                2.1
+                2.2.0dev0
               </div>
             
           
@@ -178,7 +165,7 @@
     <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
 
       
-      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+      <nav class="wy-nav-top" aria-label="top navigation">
         
           <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
           <a href="../index.html">Altair</a>
@@ -186,9 +173,10 @@
       </nav>
 
 
-      
       <div class="wy-nav-content">
+        
         <div class="rst-content">
+        
           
 
 
@@ -241,16 +229,16 @@
   // embed when document is loaded, to ensure vega library is available
   // this works on all modern browsers, except IE8 and older
   document.addEventListener("DOMContentLoaded", function(event) {
-      var spec = {"config": {"view": {"width": 400, "height": 300}}, "data": {"url": "https://vega.github.io/vega-datasets/data/movies.json"}, "mark": "point", "encoding": {"column": {"type": "nominal", "field": "MPAA_Rating"}, "x": {"type": "quantitative", "field": "Worldwide_Gross"}, "y": {"type": "quantitative", "field": "US_DVD_Sales"}}, "$schema": "https://vega.github.io/schema/vega-lite/v2.4.3.json"};
+      var spec = {"config": {"view": {"width": 400, "height": 300}}, "data": {"url": "https://vega.github.io/vega-datasets/data/movies.json"}, "mark": "point", "encoding": {"column": {"type": "nominal", "field": "MPAA_Rating"}, "x": {"type": "quantitative", "field": "Worldwide_Gross"}, "y": {"type": "quantitative", "field": "US_DVD_Sales"}}, "$schema": "https://vega.github.io/schema/vega-lite/v2.6.0.json"};
       var opt = {
         "mode": "vega-lite",
         "renderer": "canvas",
         "actions": {"editor": true, "source": true, "export": true}
       };
-      vegaEmbed('#trellis_scatter_plot-rst-altair-plot-0', {"config": {"view": {"width": 400, "height": 300}}, "data": {"url": "https://vega.github.io/vega-datasets/data/movies.json"}, "mark": "point", "encoding": {"column": {"type": "nominal", "field": "MPAA_Rating"}, "x": {"type": "quantitative", "field": "Worldwide_Gross"}, "y": {"type": "quantitative", "field": "US_DVD_Sales"}}, "$schema": "https://vega.github.io/schema/vega-lite/v2.4.3.json"}).catch(console.err);
+      vegaEmbed('#trellis_scatter_plot-rst-altair-plot-0', {"config": {"view": {"width": 400, "height": 300}}, "data": {"url": "https://vega.github.io/vega-datasets/data/movies.json"}, "mark": "point", "encoding": {"column": {"type": "nominal", "field": "MPAA_Rating"}, "x": {"type": "quantitative", "field": "Worldwide_Gross"}, "y": {"type": "quantitative", "field": "US_DVD_Sales"}}, "$schema": "https://vega.github.io/schema/vega-lite/v2.6.0.json"}).catch(console.err);
   });
 </script>
-</div><div class="highlight-python"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">altair</span> <span class="kn">as</span> <span class="nn">alt</span>
+</div><div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">altair</span> <span class="kn">as</span> <span class="nn">alt</span>
 <span class="kn">from</span> <span class="nn">vega_datasets</span> <span class="kn">import</span> <span class="n">data</span>
 
 <span class="n">source</span> <span class="o">=</span> <span class="n">data</span><span class="o">.</span><span class="n">movies</span><span class="o">.</span><span class="n">url</span>
@@ -268,9 +256,7 @@
 
 
            </div>
-           <div class="articleComments">
-            
-           </div>
+           
           </div>
           <footer>
   
@@ -292,7 +278,7 @@
 
     </p>
   </div>
-  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
 
 </footer>
 
@@ -310,7 +296,8 @@
     <script type="text/javascript">
         var DOCUMENTATION_OPTIONS = {
             URL_ROOT:'../',
-            VERSION:'2.1.0',
+            VERSION:'2.2.0dev0',
+            LANGUAGE:'None',
             COLLAPSE_INDEX:false,
             FILE_SUFFIX:'.html',
             HAS_SOURCE:  true,
@@ -326,19 +313,13 @@
 
   
 
-  
-  
-    <script type="text/javascript" src="../_static/js/theme.js"></script>
-  
+  <script type="text/javascript" src="../_static/js/theme.js"></script>
 
-  
-  
   <script type="text/javascript">
       jQuery(function () {
-          SphinxRtdTheme.StickyNav.enable();
+          SphinxRtdTheme.Navigation.enable(true);
       });
-  </script>
-   
+  </script> 
 
 </body>
 </html>

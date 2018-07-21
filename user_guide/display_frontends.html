@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>Displaying Charts in Various Frontends &mdash; Altair 2.1.0 documentation</title>
+  <title>Displaying Charts in Various Frontends &mdash; Altair 2.2.0dev0 documentation</title>
   
 
   
@@ -26,35 +26,23 @@
 
   
 
-  
-  
-    <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
-  
-
-  
-    <link rel="stylesheet" href="../_static/altair-plot.css" type="text/css" />
-  
-    <link rel="stylesheet" href="../_static/altair-gallery.css" type="text/css" />
-  
-    <link rel="stylesheet" href="../_static/theme_overrides.css" type="text/css" />
-  
-    <link rel="stylesheet" href="../_static/custom.css" type="text/css" />
-  
-
-  
-        <link rel="index" title="Index"
-              href="../genindex.html"/>
-        <link rel="search" title="Search" href="../search.html"/>
-    <link rel="top" title="Altair 2.1.0 documentation" href="../index.html"/>
-        <link rel="next" title="Customizing Renderers" href="custom_renderers.html"/>
-        <link rel="prev" title="Importing Vega &amp; Vega-Lite Versions" href="importing.html"/> 
+  <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/altair-plot.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/altair-gallery.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/theme_overrides.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/custom.css" type="text/css" />
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Customizing Renderers" href="custom_renderers.html" />
+    <link rel="prev" title="Importing Vega &amp; Vega-Lite Versions" href="importing.html" /> 
 
   
   <script src="../_static/js/modernizr.min.js"></script>
 
 </head>
 
-<body class="wy-body-for-nav" role="document">
+<body class="wy-body-for-nav">
 
    
   <div class="wy-grid-for-nav">
@@ -71,7 +59,7 @@
 
           
             
-            <img src="../_static/altair-logo-light.png" class="logo" />
+            <img src="../_static/altair-logo-light.png" class="logo" alt="Logo"/>
           
           </a>
 
@@ -79,7 +67,7 @@
             
             
               <div class="version">
-                2.1
+                2.2.0dev0
               </div>
             
           
@@ -162,7 +150,7 @@
     <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
 
       
-      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+      <nav class="wy-nav-top" aria-label="top navigation">
         
           <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
           <a href="../index.html">Altair</a>
@@ -170,9 +158,10 @@
       </nav>
 
 
-      
       <div class="wy-nav-content">
+        
         <div class="rst-content">
+        
           
 
 
@@ -233,7 +222,7 @@ Vega-Lite (2.x and 1.x) and Vega (3.x and 2.x) in a single Python package.
 The default usage, including all examples in this documentation, makes use of
 the newest available versions (Vega-Lite 2.X and Vega 3.X).</p>
 <p>The vega-lite version used by default can be found as follows:</p>
-<div class="highlight-python"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">altair</span> <span class="kn">as</span> <span class="nn">alt</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">altair</span> <span class="kn">as</span> <span class="nn">alt</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">alt</span><span class="o">.</span><span class="n">schema</span><span class="o">.</span><span class="n">SCHEMA_VERSION</span>
 <span class="go">&#39;v2.3.0&#39;</span>
 </pre></div>
@@ -263,26 +252,26 @@ See relevant instructions for:<ul>
 <div class="section" id="renderer-api">
 <span id="id2"></span><h3>Renderer API<a class="headerlink" href="#renderer-api" title="Permalink to this headline">¶</a></h3>
 <p>In Altair, a renderer is any function that accepts a Vega-Lite or Vega
-visualization specification as a Python <code class="docutils literal"><span class="pre">dict</span></code>, and returns a Python <code class="docutils literal"><span class="pre">dict</span></code>
+visualization specification as a Python <code class="docutils literal notranslate"><span class="pre">dict</span></code>, and returns a Python <code class="docutils literal notranslate"><span class="pre">dict</span></code>
 in Jupyter’s <a class="reference external" href="https://jupyter-client.readthedocs.io/en/stable/messaging.html#display-data">MIME Bundle format</a>.
-The keys of the MIME bundle should be MIME types (such as <code class="docutils literal"><span class="pre">image/png</span></code>) and the
+The keys of the MIME bundle should be MIME types (such as <code class="docutils literal notranslate"><span class="pre">image/png</span></code>) and the
 values should be the data for that MIME type (text, base64 encoded binary or
 JSON). The type signature of a renderer is thus:</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">renderer</span><span class="p">(</span><span class="n">spec</span><span class="p">:</span> <span class="nb">dict</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">dict</span><span class="p">:</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">renderer</span><span class="p">(</span><span class="n">spec</span><span class="p">:</span> <span class="nb">dict</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">dict</span><span class="p">:</span>
     <span class="o">...</span>
 </pre></div>
 </div>
 <p>Altair and various user-interfaces have standardized on a couple of custom MIME types
 for Vega and Vega-Lite:</p>
 <ul class="simple">
-<li>Vega-Lite 2.x: <code class="docutils literal"><span class="pre">application/vnd.vegalite.v2+json</span></code></li>
-<li>Vega-Lite 1.x: <code class="docutils literal"><span class="pre">application/vnd.vegalite.v1+json</span></code></li>
-<li>Vega 3.x: <code class="docutils literal"><span class="pre">application/vnd.vega.v3+json</span></code></li>
-<li>Vega 2.x: <code class="docutils literal"><span class="pre">application/vnd.vega.v2+json</span></code></li>
+<li>Vega-Lite 2.x: <code class="docutils literal notranslate"><span class="pre">application/vnd.vegalite.v2+json</span></code></li>
+<li>Vega-Lite 1.x: <code class="docutils literal notranslate"><span class="pre">application/vnd.vegalite.v1+json</span></code></li>
+<li>Vega 3.x: <code class="docutils literal notranslate"><span class="pre">application/vnd.vega.v3+json</span></code></li>
+<li>Vega 2.x: <code class="docutils literal notranslate"><span class="pre">application/vnd.vega.v2+json</span></code></li>
 </ul>
 <p>The default renderers simply take a JSON spec and return a MIME bundle with one
 of these MIME types:</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">default_renderer</span><span class="p">(</span><span class="n">spec</span><span class="p">):</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">default_renderer</span><span class="p">(</span><span class="n">spec</span><span class="p">):</span>
     <span class="n">bundle</span> <span class="o">=</span> <span class="p">{}</span>
     <span class="n">metadata</span> <span class="o">=</span> <span class="p">{}</span>
     <span class="n">bundle</span><span class="p">[</span><span class="s1">&#39;text/plain&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="s1">&#39;&lt;VegaLite object&gt;`</span>
@@ -291,8 +280,8 @@ of these MIME types:</p>
 </pre></div>
 </div>
 <p>If a renderer needs to do custom display logic that doesn’t use Jupyter’s display
-system, it can return an empty MIME bundle <code class="docutils literal"><span class="pre">dict</span></code>:</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">non_jupyter_renderer</span><span class="p">(</span><span class="n">spec</span><span class="p">):</span>
+system, it can return an empty MIME bundle <code class="docutils literal notranslate"><span class="pre">dict</span></code>:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">non_jupyter_renderer</span><span class="p">(</span><span class="n">spec</span><span class="p">):</span>
     <span class="c1"># Custom display logic that uses the spec</span>
     <span class="o">...</span>
     <span class="c1"># Return empty MIME bundle</span>
@@ -301,24 +290,24 @@ system, it can return an empty MIME bundle <code class="docutils literal"><span 
 </div>
 <p>Altair offers an API to list the known renderers, register new ones and enable
 a given one. To return the registered renderers as a Python list:</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">altair</span> <span class="k">as</span> <span class="nn">alt</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">altair</span> <span class="k">as</span> <span class="nn">alt</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">alt</span><span class="o">.</span><span class="n">renderers</span><span class="o">.</span><span class="n">names</span><span class="p">()</span>
 <span class="go">[&#39;default&#39;, &#39;json&#39;]</span>
 </pre></div>
 </div>
 <p>To enable the JSON renderer, which results in a collapsible JSON tree view
 in JupyterLab/nteract:</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">alt</span><span class="o">.</span><span class="n">renderers</span><span class="o">.</span><span class="n">enable</span><span class="p">(</span><span class="s1">&#39;json&#39;</span><span class="p">)</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">alt</span><span class="o">.</span><span class="n">renderers</span><span class="o">.</span><span class="n">enable</span><span class="p">(</span><span class="s1">&#39;json&#39;</span><span class="p">)</span>
 </pre></div>
 </div>
 <p>To register and enable a new renderer:</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">alt</span><span class="o">.</span><span class="n">renderers</span><span class="o">.</span><span class="n">register</span><span class="p">(</span><span class="s1">&#39;custom_renderer&#39;</span><span class="p">,</span> <span class="n">custom_renderer</span><span class="p">)</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">alt</span><span class="o">.</span><span class="n">renderers</span><span class="o">.</span><span class="n">register</span><span class="p">(</span><span class="s1">&#39;custom_renderer&#39;</span><span class="p">,</span> <span class="n">custom_renderer</span><span class="p">)</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">alt</span><span class="o">.</span><span class="n">renderers</span><span class="o">.</span><span class="n">enable</span><span class="p">(</span><span class="s1">&#39;custom_renderer&#39;</span><span class="p">)</span>
 </pre></div>
 </div>
 <p>Renderers can also be registered using the <a class="reference external" href="https://github.com/takluyver/entrypoints">entrypoints</a> API of Python packages.
 For an example, see <a href="#id4"><span class="problematic" id="id5">`ipyvega`_</span></a>.</p>
-<p>This same <code class="docutils literal"><span class="pre">renderer</span></code> objects exists separately on all of the Python APIs
+<p>This same <code class="docutils literal notranslate"><span class="pre">renderer</span></code> objects exists separately on all of the Python APIs
 for Vega-Lite/Vega described in <a class="reference internal" href="importing.html#importing"><span class="std std-ref">Importing Vega &amp; Vega-Lite Versions</span></a>.</p>
 </div>
 <div class="section" id="displaying-in-the-jupyter-notebook">
@@ -326,26 +315,26 @@ for Vega-Lite/Vega described in <a class="reference internal" href="importing.ht
 <p>To render Vega-Lite 2.x or Vega 3.x in the Jupyter Notebook (as mentioned above
 we recommend these versions), you will need to install and enable the
 <a href="#id6"><span class="problematic" id="id7">`ipyvega`_</span></a> Python package using conda:</p>
-<div class="highlight-bash"><div class="highlight"><pre><span></span>$ conda install vega --channel conda-forge
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ conda install vega --channel conda-forge
 </pre></div>
 </div>
-<p>or <code class="docutils literal"><span class="pre">pip</span></code>:</p>
-<div class="highlight-bash"><div class="highlight"><pre><span></span>$ pip install jupyter pandas vega
+<p>or <code class="docutils literal notranslate"><span class="pre">pip</span></code>:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ pip install jupyter pandas vega
 $ jupyter nbextension install --sys-prefix --py vega <span class="c1"># not needed in notebook &gt;= 5.3</span>
 </pre></div>
 </div>
 <p>For Vega-Lite 1.x or Vega 2.x, you will need to install and enable the <a href="#id8"><span class="problematic" id="id9">`ipyvega`_</span></a> Python
 package using:</p>
-<div class="highlight-bash"><div class="highlight"><pre><span></span>$ conda install vega --channel conda-forge
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ conda install vega --channel conda-forge
 </pre></div>
 </div>
-<p>or <code class="docutils literal"><span class="pre">pip</span></code>:</p>
-<div class="highlight-bash"><div class="highlight"><pre><span></span>$ pip install jupyter pandas vega
+<p>or <code class="docutils literal notranslate"><span class="pre">pip</span></code>:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ pip install jupyter pandas vega
 $ jupyter nbextension install --sys-prefix --py vega <span class="c1"># not needed in notebook &gt;= 5.3</span>
 </pre></div>
 </div>
 <p>Once you have installed one of these packages, enable the corresponding renderer in Altair:</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">alt</span><span class="o">.</span><span class="n">renderers</span><span class="o">.</span><span class="n">enable</span><span class="p">(</span><span class="s1">&#39;notebook&#39;</span><span class="p">)</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">alt</span><span class="o">.</span><span class="n">renderers</span><span class="o">.</span><span class="n">enable</span><span class="p">(</span><span class="s1">&#39;notebook&#39;</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -353,12 +342,12 @@ $ jupyter nbextension install --sys-prefix --py vega <span class="c1"># not need
 <span id="display-jupyterlab"></span><h3>Displaying in JupyterLab<a class="headerlink" href="#displaying-in-jupyterlab" title="Permalink to this headline">¶</a></h3>
 <p>JupyterLab versions 0.32 and later include built-in support for Vega-Lite 2.x and
 Vega 3.x. These will work out of the box with Altair imported as:</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">altair</span> <span class="k">as</span> <span class="nn">alt</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">altair</span> <span class="k">as</span> <span class="nn">alt</span>
 </pre></div>
 </div>
 <p>An extension is available with the older Vega-Lite 1.x and Vega 2.x renderers
-(<code class="docutils literal"><span class="pre">labextension</span> <span class="pre">install</span></code> requires nodejs):</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">conda</span> <span class="n">install</span> <span class="o">-</span><span class="n">c</span> <span class="n">conda</span><span class="o">-</span><span class="n">forge</span> <span class="n">nodejs</span>  <span class="c1"># if you do not already have nodejs installed</span>
+(<code class="docutils literal notranslate"><span class="pre">labextension</span> <span class="pre">install</span></code> requires nodejs):</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">conda</span> <span class="n">install</span> <span class="o">-</span><span class="n">c</span> <span class="n">conda</span><span class="o">-</span><span class="n">forge</span> <span class="n">nodejs</span>  <span class="c1"># if you do not already have nodejs installed</span>
 <span class="n">jupyter</span> <span class="n">labextension</span> <span class="n">install</span> <span class="nd">@jupyterlab</span><span class="o">/</span><span class="n">vega2</span><span class="o">-</span><span class="n">extension</span>
 </pre></div>
 </div>
@@ -371,7 +360,7 @@ Altair plots without any extra configuration.</p>
 <div class="section" id="displaying-in-colab">
 <span id="display-colab"></span><h3>Displaying in Colab<a class="headerlink" href="#displaying-in-colab" title="Permalink to this headline">¶</a></h3>
 <p>Google’s Colab is a cloud-based notebook backed by Google Drive.
-Colab comes with Altair pre-installed and with the <code class="docutils literal"><span class="pre">'colab'</span></code> renderer
+Colab comes with Altair pre-installed and with the <code class="docutils literal notranslate"><span class="pre">'colab'</span></code> renderer
 enabled, so Altair will work out-of-the-box.</p>
 </div>
 <div class="section" id="working-in-non-notebook-environments">
@@ -384,11 +373,11 @@ environments mentioned above.</p>
 a built-in javascript engine, you’ll need to somehow connect your charts to a
 second tool that can execute javascript.</p>
 <p>Fortunately, most people have a web browser available, and Altair provides the
-<code class="xref py py-meth docutils literal"><span class="pre">Chart.serve()</span></code> method which will seamlessly convert the plot to HTML, start
+<code class="xref py py-meth docutils literal notranslate"><span class="pre">Chart.serve()</span></code> method which will seamlessly convert the plot to HTML, start
 a webserver serving that HTML, and open your system’s default web browser to view
 it.</p>
 <p>For example, you can serve a chart to a web browser like this:</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">altair</span> <span class="k">as</span> <span class="nn">alt</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">altair</span> <span class="k">as</span> <span class="nn">alt</span>
 
 <span class="c1"># load a simple dataset as a pandas DataFrame</span>
 <span class="kn">from</span> <span class="nn">vega_datasets</span> <span class="k">import</span> <span class="n">data</span>
@@ -404,16 +393,14 @@ it.</p>
 </pre></div>
 </div>
 <p>The command will block the Python interpreter, and will have to be canceled with
-<code class="docutils literal"><span class="pre">Ctrl-C</span></code> to execute any further code.</p>
+<code class="docutils literal notranslate"><span class="pre">Ctrl-C</span></code> to execute any further code.</p>
 </div>
 </div>
 </div>
 
 
            </div>
-           <div class="articleComments">
-            
-           </div>
+           
           </div>
           <footer>
   
@@ -435,7 +422,7 @@ it.</p>
 
     </p>
   </div>
-  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
 
 </footer>
 
@@ -453,7 +440,8 @@ it.</p>
     <script type="text/javascript">
         var DOCUMENTATION_OPTIONS = {
             URL_ROOT:'../',
-            VERSION:'2.1.0',
+            VERSION:'2.2.0dev0',
+            LANGUAGE:'None',
             COLLAPSE_INDEX:false,
             FILE_SUFFIX:'.html',
             HAS_SOURCE:  true,
@@ -469,19 +457,13 @@ it.</p>
 
   
 
-  
-  
-    <script type="text/javascript" src="../_static/js/theme.js"></script>
-  
+  <script type="text/javascript" src="../_static/js/theme.js"></script>
 
-  
-  
   <script type="text/javascript">
       jQuery(function () {
-          SphinxRtdTheme.StickyNav.enable();
+          SphinxRtdTheme.Navigation.enable(true);
       });
-  </script>
-   
+  </script> 
 
 </body>
 </html>

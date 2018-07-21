@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>Specifying Data in Altair &mdash; Altair 2.1.0 documentation</title>
+  <title>Specifying Data in Altair &mdash; Altair 2.2.0dev0 documentation</title>
   
 
   
@@ -26,35 +26,23 @@
 
   
 
-  
-  
-    <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
-  
-
-  
-    <link rel="stylesheet" href="../_static/altair-plot.css" type="text/css" />
-  
-    <link rel="stylesheet" href="../_static/altair-gallery.css" type="text/css" />
-  
-    <link rel="stylesheet" href="../_static/theme_overrides.css" type="text/css" />
-  
-    <link rel="stylesheet" href="../_static/custom.css" type="text/css" />
-  
-
-  
-        <link rel="index" title="Index"
-              href="../genindex.html"/>
-        <link rel="search" title="Search" href="../search.html"/>
-    <link rel="top" title="Altair 2.1.0 documentation" href="../index.html"/>
-        <link rel="next" title="Encodings" href="encoding.html"/>
-        <link rel="prev" title="Trail Marker" href="../gallery/trail_marker.html"/> 
+  <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/altair-plot.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/altair-gallery.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/theme_overrides.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/custom.css" type="text/css" />
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Encodings" href="encoding.html" />
+    <link rel="prev" title="Trail Marker" href="../gallery/trail_marker.html" /> 
 
   
   <script src="../_static/js/modernizr.min.js"></script>
 
 </head>
 
-<body class="wy-body-for-nav" role="document">
+<body class="wy-body-for-nav">
 
    
   <div class="wy-grid-for-nav">
@@ -71,7 +59,7 @@
 
           
             
-            <img src="../_static/altair-logo-light.png" class="logo" />
+            <img src="../_static/altair-logo-light.png" class="logo" alt="Logo"/>
           
           </a>
 
@@ -79,7 +67,7 @@
             
             
               <div class="version">
-                2.1
+                2.2.0dev0
               </div>
             
           
@@ -156,7 +144,7 @@
     <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
 
       
-      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+      <nav class="wy-nav-top" aria-label="top navigation">
         
           <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
           <a href="../index.html">Altair</a>
@@ -164,9 +152,10 @@
       </nav>
 
 
-      
       <div class="wy-nav-content">
+        
         <div class="rst-content">
+        
           
 
 
@@ -210,17 +199,17 @@
             
   <div class="section" id="specifying-data-in-altair">
 <span id="user-guide-data"></span><h1>Specifying Data in Altair<a class="headerlink" href="#specifying-data-in-altair" title="Permalink to this headline">¶</a></h1>
-<p>Each top-level chart object (i.e. <a class="reference internal" href="API.html#altair.Chart" title="altair.Chart"><code class="xref py py-class docutils literal"><span class="pre">Chart</span></code></a>, <a class="reference internal" href="API.html#altair.LayerChart" title="altair.LayerChart"><code class="xref py py-class docutils literal"><span class="pre">LayerChart</span></code></a>,
-and <a class="reference internal" href="API.html#altair.VConcatChart" title="altair.VConcatChart"><code class="xref py py-class docutils literal"><span class="pre">VConcatChart</span></code></a>, <code class="xref py py-class docutils literal"><span class="pre">HConcatChart`</span></code>, <a class="reference internal" href="API.html#altair.RepeatChart" title="altair.RepeatChart"><code class="xref py py-class docutils literal"><span class="pre">RepeatChart</span></code></a>,
-<a class="reference internal" href="API.html#altair.FacetChart" title="altair.FacetChart"><code class="xref py py-class docutils literal"><span class="pre">FacetChart</span></code></a>) accepts a dataset as its first argument.
+<p>Each top-level chart object (i.e. <a class="reference internal" href="API.html#altair.Chart" title="altair.Chart"><code class="xref py py-class docutils literal notranslate"><span class="pre">Chart</span></code></a>, <a class="reference internal" href="API.html#altair.LayerChart" title="altair.LayerChart"><code class="xref py py-class docutils literal notranslate"><span class="pre">LayerChart</span></code></a>,
+and <a class="reference internal" href="API.html#altair.VConcatChart" title="altair.VConcatChart"><code class="xref py py-class docutils literal notranslate"><span class="pre">VConcatChart</span></code></a>, <a class="reference internal" href="API.html#altair.HConcatChart" title="altair.HConcatChart"><code class="xref py py-class docutils literal notranslate"><span class="pre">HConcatChart</span></code></a>, <a class="reference internal" href="API.html#altair.RepeatChart" title="altair.RepeatChart"><code class="xref py py-class docutils literal notranslate"><span class="pre">RepeatChart</span></code></a>,
+<a class="reference internal" href="API.html#altair.FacetChart" title="altair.FacetChart"><code class="xref py py-class docutils literal notranslate"><span class="pre">FacetChart</span></code></a>) accepts a dataset as its first argument.
 The dataset can be specified in one of three ways:</p>
 <ul class="simple">
 <li>as a <a class="reference external" href="http://pandas.pydata.org/pandas-docs/stable/generated/pandas.DataFrame.html">Pandas DataFrame</a></li>
-<li>as a <a class="reference internal" href="API.html#altair.Data" title="altair.Data"><code class="xref py py-class docutils literal"><span class="pre">Data</span></code></a> or related object (i.e. <a class="reference internal" href="API.html#altair.UrlData" title="altair.UrlData"><code class="xref py py-class docutils literal"><span class="pre">UrlData</span></code></a>, <a class="reference internal" href="API.html#altair.InlineData" title="altair.InlineData"><code class="xref py py-class docutils literal"><span class="pre">InlineData</span></code></a>, <a class="reference internal" href="API.html#altair.NamedData" title="altair.NamedData"><code class="xref py py-class docutils literal"><span class="pre">NamedData</span></code></a>)</li>
-<li>as a url string pointing to a <code class="docutils literal"><span class="pre">json</span></code> or <code class="docutils literal"><span class="pre">csv</span></code> formatted text file</li>
+<li>as a <a class="reference internal" href="API.html#altair.Data" title="altair.Data"><code class="xref py py-class docutils literal notranslate"><span class="pre">Data</span></code></a> or related object (i.e. <a class="reference internal" href="API.html#altair.UrlData" title="altair.UrlData"><code class="xref py py-class docutils literal notranslate"><span class="pre">UrlData</span></code></a>, <a class="reference internal" href="API.html#altair.InlineData" title="altair.InlineData"><code class="xref py py-class docutils literal notranslate"><span class="pre">InlineData</span></code></a>, <a class="reference internal" href="API.html#altair.NamedData" title="altair.NamedData"><code class="xref py py-class docutils literal notranslate"><span class="pre">NamedData</span></code></a>)</li>
+<li>as a url string pointing to a <code class="docutils literal notranslate"><span class="pre">json</span></code> or <code class="docutils literal notranslate"><span class="pre">csv</span></code> formatted text file</li>
 </ul>
 <p>For example, here we specify data via a DataFrame:</p>
-<div class="highlight-python" id="data-rst-altair-source-0"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">altair</span> <span class="kn">as</span> <span class="nn">alt</span>
+<div class="highlight-python notranslate" id="data-rst-altair-source-0"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">altair</span> <span class="kn">as</span> <span class="nn">alt</span>
 <span class="kn">import</span> <span class="nn">pandas</span> <span class="kn">as</span> <span class="nn">pd</span>
 
 <span class="n">data</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">({</span><span class="s1">&#39;x&#39;</span><span class="p">:</span> <span class="p">[</span><span class="s1">&#39;A&#39;</span><span class="p">,</span> <span class="s1">&#39;B&#39;</span><span class="p">,</span> <span class="s1">&#39;C&#39;</span><span class="p">,</span> <span class="s1">&#39;D&#39;</span><span class="p">,</span> <span class="s1">&#39;E&#39;</span><span class="p">],</span>
@@ -237,21 +226,21 @@ The dataset can be specified in one of three ways:</p>
   // embed when document is loaded, to ensure vega library is available
   // this works on all modern browsers, except IE8 and older
   document.addEventListener("DOMContentLoaded", function(event) {
-      var spec = {"config": {"view": {"width": 400, "height": 300}}, "data": {"values": [{"x": "A", "y": 5}, {"x": "B", "y": 3}, {"x": "C", "y": 6}, {"x": "D", "y": 7}, {"x": "E", "y": 2}]}, "mark": "bar", "encoding": {"x": {"type": "nominal", "field": "x"}, "y": {"type": "quantitative", "field": "y"}}, "$schema": "https://vega.github.io/schema/vega-lite/v2.4.3.json"};
+      var spec = {"config": {"view": {"width": 400, "height": 300}}, "data": {"values": [{"x": "A", "y": 5}, {"x": "B", "y": 3}, {"x": "C", "y": 6}, {"x": "D", "y": 7}, {"x": "E", "y": 2}]}, "mark": "bar", "encoding": {"x": {"type": "nominal", "field": "x"}, "y": {"type": "quantitative", "field": "y"}}, "$schema": "https://vega.github.io/schema/vega-lite/v2.6.0.json"};
       var opt = {
         "mode": "vega-lite",
         "renderer": "canvas",
         "actions": {"editor": true, "source": true, "export": true}
       };
-      vegaEmbed('#data-rst-altair-plot-0', {"config": {"view": {"width": 400, "height": 300}}, "data": {"values": [{"x": "A", "y": 5}, {"x": "B", "y": 3}, {"x": "C", "y": 6}, {"x": "D", "y": 7}, {"x": "E", "y": 2}]}, "mark": "bar", "encoding": {"x": {"type": "nominal", "field": "x"}, "y": {"type": "quantitative", "field": "y"}}, "$schema": "https://vega.github.io/schema/vega-lite/v2.4.3.json"}).catch(console.err);
+      vegaEmbed('#data-rst-altair-plot-0', {"config": {"view": {"width": 400, "height": 300}}, "data": {"values": [{"x": "A", "y": 5}, {"x": "B", "y": 3}, {"x": "C", "y": 6}, {"x": "D", "y": 7}, {"x": "E", "y": 2}]}, "mark": "bar", "encoding": {"x": {"type": "nominal", "field": "x"}, "y": {"type": "quantitative", "field": "y"}}, "$schema": "https://vega.github.io/schema/vega-lite/v2.6.0.json"}).catch(console.err);
   });
 </script>
 </div><p>When data is specified as a DataFrame, the encoding is quite simple, as Altair
 uses the data type information provided by Pandas to automatically determine
 the data types required in the encoding.</p>
-<p>By comparison, here we create the same chart using a <a class="reference internal" href="API.html#altair.Data" title="altair.Data"><code class="xref py py-class docutils literal"><span class="pre">Data</span></code></a> object,
+<p>By comparison, here we create the same chart using a <a class="reference internal" href="API.html#altair.Data" title="altair.Data"><code class="xref py py-class docutils literal notranslate"><span class="pre">Data</span></code></a> object,
 with the data specified as a JSON-style list of records:</p>
-<div class="highlight-python" id="data-rst-altair-source-1"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">altair</span> <span class="kn">as</span> <span class="nn">alt</span>
+<div class="highlight-python notranslate" id="data-rst-altair-source-1"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">altair</span> <span class="kn">as</span> <span class="nn">alt</span>
 
 <span class="n">data</span> <span class="o">=</span> <span class="n">alt</span><span class="o">.</span><span class="n">Data</span><span class="p">(</span><span class="n">values</span><span class="o">=</span><span class="p">[{</span><span class="s1">&#39;x&#39;</span><span class="p">:</span> <span class="s1">&#39;A&#39;</span><span class="p">,</span> <span class="s1">&#39;y&#39;</span><span class="p">:</span> <span class="mi">5</span><span class="p">},</span>
                         <span class="p">{</span><span class="s1">&#39;x&#39;</span><span class="p">:</span> <span class="s1">&#39;B&#39;</span><span class="p">,</span> <span class="s1">&#39;y&#39;</span><span class="p">:</span> <span class="mi">3</span><span class="p">},</span>
@@ -270,21 +259,21 @@ with the data specified as a JSON-style list of records:</p>
   // embed when document is loaded, to ensure vega library is available
   // this works on all modern browsers, except IE8 and older
   document.addEventListener("DOMContentLoaded", function(event) {
-      var spec = {"config": {"view": {"width": 400, "height": 300}}, "data": {"values": [{"x": "A", "y": 5}, {"x": "B", "y": 3}, {"x": "C", "y": 6}, {"x": "D", "y": 7}, {"x": "E", "y": 2}]}, "mark": "bar", "encoding": {"x": {"type": "ordinal", "field": "x"}, "y": {"type": "quantitative", "field": "y"}}, "$schema": "https://vega.github.io/schema/vega-lite/v2.4.3.json"};
+      var spec = {"config": {"view": {"width": 400, "height": 300}}, "data": {"values": [{"x": "A", "y": 5}, {"x": "B", "y": 3}, {"x": "C", "y": 6}, {"x": "D", "y": 7}, {"x": "E", "y": 2}]}, "mark": "bar", "encoding": {"x": {"type": "ordinal", "field": "x"}, "y": {"type": "quantitative", "field": "y"}}, "$schema": "https://vega.github.io/schema/vega-lite/v2.6.0.json"};
       var opt = {
         "mode": "vega-lite",
         "renderer": "canvas",
         "actions": {"editor": true, "source": true, "export": true}
       };
-      vegaEmbed('#data-rst-altair-plot-1', {"config": {"view": {"width": 400, "height": 300}}, "data": {"values": [{"x": "A", "y": 5}, {"x": "B", "y": 3}, {"x": "C", "y": 6}, {"x": "D", "y": 7}, {"x": "E", "y": 2}]}, "mark": "bar", "encoding": {"x": {"type": "ordinal", "field": "x"}, "y": {"type": "quantitative", "field": "y"}}, "$schema": "https://vega.github.io/schema/vega-lite/v2.4.3.json"}).catch(console.err);
+      vegaEmbed('#data-rst-altair-plot-1', {"config": {"view": {"width": 400, "height": 300}}, "data": {"values": [{"x": "A", "y": 5}, {"x": "B", "y": 3}, {"x": "C", "y": 6}, {"x": "D", "y": 7}, {"x": "E", "y": 2}]}, "mark": "bar", "encoding": {"x": {"type": "ordinal", "field": "x"}, "y": {"type": "quantitative", "field": "y"}}, "$schema": "https://vega.github.io/schema/vega-lite/v2.6.0.json"}).catch(console.err);
   });
 </script>
 </div><p>notice the extra markup required in the encoding; because Altair cannot infer
-the types within a <a class="reference internal" href="API.html#altair.Data" title="altair.Data"><code class="xref py py-class docutils literal"><span class="pre">Data</span></code></a> object, we must specify them manually
-(here we use <a class="reference internal" href="encoding.html#shorthand-description"><span class="std std-ref">Encoding Shorthands</span></a> to specify <em>ordinal</em> (<code class="docutils literal"><span class="pre">O</span></code>) for <code class="docutils literal"><span class="pre">x</span></code>
-and <em>quantitative</em> (<code class="docutils literal"><span class="pre">Q</span></code>) for <code class="docutils literal"><span class="pre">y</span></code>; see <a class="reference internal" href="encoding.html#data-types"><span class="std std-ref">Data Types</span></a> below).</p>
+the types within a <a class="reference internal" href="API.html#altair.Data" title="altair.Data"><code class="xref py py-class docutils literal notranslate"><span class="pre">Data</span></code></a> object, we must specify them manually
+(here we use <a class="reference internal" href="encoding.html#shorthand-description"><span class="std std-ref">Encoding Shorthands</span></a> to specify <em>ordinal</em> (<code class="docutils literal notranslate"><span class="pre">O</span></code>) for <code class="docutils literal notranslate"><span class="pre">x</span></code>
+and <em>quantitative</em> (<code class="docutils literal notranslate"><span class="pre">Q</span></code>) for <code class="docutils literal notranslate"><span class="pre">y</span></code>; see <a class="reference internal" href="encoding.html#data-types"><span class="std std-ref">Data Types</span></a> below).</p>
 <p>Similarly, we must also specify the data type when referencing data by URL:</p>
-<div class="highlight-python" id="data-rst-altair-source-2"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">altair</span> <span class="kn">as</span> <span class="nn">alt</span>
+<div class="highlight-python notranslate" id="data-rst-altair-source-2"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">altair</span> <span class="kn">as</span> <span class="nn">alt</span>
 <span class="kn">from</span> <span class="nn">vega_datasets</span> <span class="kn">import</span> <span class="n">data</span>
 <span class="n">url</span> <span class="o">=</span> <span class="n">data</span><span class="o">.</span><span class="n">cars</span><span class="o">.</span><span class="n">url</span>
 
@@ -300,13 +289,13 @@ and <em>quantitative</em> (<code class="docutils literal"><span class="pre">Q</s
   // embed when document is loaded, to ensure vega library is available
   // this works on all modern browsers, except IE8 and older
   document.addEventListener("DOMContentLoaded", function(event) {
-      var spec = {"config": {"view": {"width": 400, "height": 300}}, "data": {"url": "https://vega.github.io/vega-datasets/data/cars.json"}, "mark": "point", "encoding": {"x": {"type": "quantitative", "field": "Horsepower"}, "y": {"type": "quantitative", "field": "Miles_per_Gallon"}}, "$schema": "https://vega.github.io/schema/vega-lite/v2.4.3.json"};
+      var spec = {"config": {"view": {"width": 400, "height": 300}}, "data": {"url": "https://vega.github.io/vega-datasets/data/cars.json"}, "mark": "point", "encoding": {"x": {"type": "quantitative", "field": "Horsepower"}, "y": {"type": "quantitative", "field": "Miles_per_Gallon"}}, "$schema": "https://vega.github.io/schema/vega-lite/v2.6.0.json"};
       var opt = {
         "mode": "vega-lite",
         "renderer": "canvas",
         "actions": {"editor": true, "source": true, "export": true}
       };
-      vegaEmbed('#data-rst-altair-plot-2', {"config": {"view": {"width": 400, "height": 300}}, "data": {"url": "https://vega.github.io/vega-datasets/data/cars.json"}, "mark": "point", "encoding": {"x": {"type": "quantitative", "field": "Horsepower"}, "y": {"type": "quantitative", "field": "Miles_per_Gallon"}}, "$schema": "https://vega.github.io/schema/vega-lite/v2.4.3.json"}).catch(console.err);
+      vegaEmbed('#data-rst-altair-plot-2', {"config": {"view": {"width": 400, "height": 300}}, "data": {"url": "https://vega.github.io/vega-datasets/data/cars.json"}, "mark": "point", "encoding": {"x": {"type": "quantitative", "field": "Horsepower"}, "y": {"type": "quantitative", "field": "Miles_per_Gallon"}}, "$schema": "https://vega.github.io/schema/vega-lite/v2.6.0.json"}).catch(console.err);
   });
 </script>
 </div><p>We will further discuss encodings and associated types in <a class="reference internal" href="encoding.html#user-guide-encoding"><span class="std std-ref">Encodings</span></a>, next.</p>
@@ -326,7 +315,7 @@ corresponds to a single observation along with its metadata.</p>
 <p>A concrete example will help in making this distinction more clear.
 Consider a dataset consisting of stock prices of several companies over time.
 The wide-form version of the data might be arranged as follows:</p>
-<div class="highlight-python" id="data-rst-altair-source-3"><div class="highlight"><pre><span></span><span class="n">wide_form</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">({</span><span class="s1">&#39;AAPL&#39;</span><span class="p">:</span> <span class="p">[</span><span class="mf">189.95</span><span class="p">,</span> <span class="mf">182.22</span><span class="p">,</span> <span class="mf">198.08</span><span class="p">],</span>
+<div class="highlight-python notranslate" id="data-rst-altair-source-3"><div class="highlight"><pre><span></span><span class="n">wide_form</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">({</span><span class="s1">&#39;AAPL&#39;</span><span class="p">:</span> <span class="p">[</span><span class="mf">189.95</span><span class="p">,</span> <span class="mf">182.22</span><span class="p">,</span> <span class="mf">198.08</span><span class="p">],</span>
                           <span class="s1">&#39;AMZN&#39;</span><span class="p">:</span> <span class="p">[</span><span class="mf">89.15</span><span class="p">,</span> <span class="mf">90.56</span><span class="p">,</span> <span class="mf">92.64</span><span class="p">],</span>
                           <span class="s1">&#39;GOOG&#39;</span><span class="p">:</span> <span class="p">[</span><span class="mf">707.00</span><span class="p">,</span> <span class="mf">693.00</span><span class="p">,</span> <span class="mf">691.48</span><span class="p">]},</span>
                          <span class="n">index</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;2007-10-01&#39;</span><span class="p">,</span> <span class="s1">&#39;2007-11-01&#39;</span><span class="p">,</span> <span class="s1">&#39;2007-12-01&#39;</span><span class="p">])</span>
@@ -334,7 +323,7 @@ The wide-form version of the data might be arranged as follows:</p>
 </pre></div>
 </div>
 <div class="admonition">
-<div class="first last highlight-none"><div class="highlight"><pre><span></span>                  AAPL   AMZN    GOOG
+<div class="first last highlight-none notranslate"><div class="highlight"><pre><span></span>                  AAPL   AMZN    GOOG
     2007-10-01  189.95  89.15  707.00
     2007-11-01  182.22  90.56  693.00
     2007-12-01  198.08  92.64  691.48
@@ -344,7 +333,7 @@ The wide-form version of the data might be arranged as follows:</p>
 independent variable), while metadata for each observation
 (i.e. date and company name) is stored within the row and column labels.</p>
 <p>The long-form version of the same data might look like this:</p>
-<div class="highlight-python" id="data-rst-altair-source-4"><div class="highlight"><pre><span></span><span class="n">long_form</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">({</span><span class="s1">&#39;Date&#39;</span><span class="p">:</span> <span class="p">[</span><span class="s1">&#39;2007-10-01&#39;</span><span class="p">,</span> <span class="s1">&#39;2007-11-01&#39;</span><span class="p">,</span> <span class="s1">&#39;2007-12-01&#39;</span><span class="p">,</span>
+<div class="highlight-python notranslate" id="data-rst-altair-source-4"><div class="highlight"><pre><span></span><span class="n">long_form</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">({</span><span class="s1">&#39;Date&#39;</span><span class="p">:</span> <span class="p">[</span><span class="s1">&#39;2007-10-01&#39;</span><span class="p">,</span> <span class="s1">&#39;2007-11-01&#39;</span><span class="p">,</span> <span class="s1">&#39;2007-12-01&#39;</span><span class="p">,</span>
                                    <span class="s1">&#39;2007-10-01&#39;</span><span class="p">,</span> <span class="s1">&#39;2007-11-01&#39;</span><span class="p">,</span> <span class="s1">&#39;2007-12-01&#39;</span><span class="p">,</span>
                                    <span class="s1">&#39;2007-10-01&#39;</span><span class="p">,</span> <span class="s1">&#39;2007-11-01&#39;</span><span class="p">,</span> <span class="s1">&#39;2007-12-01&#39;</span><span class="p">],</span>
                           <span class="s1">&#39;company&#39;</span><span class="p">:</span> <span class="p">[</span><span class="s1">&#39;AAPL&#39;</span><span class="p">,</span> <span class="s1">&#39;AAPL&#39;</span><span class="p">,</span> <span class="s1">&#39;AAPL&#39;</span><span class="p">,</span>
@@ -357,7 +346,7 @@ independent variable), while metadata for each observation
 </pre></div>
 </div>
 <div class="admonition">
-<div class="first last highlight-none"><div class="highlight"><pre><span></span>             Date company   price
+<div class="first last highlight-none notranslate"><div class="highlight"><pre><span></span>             Date company   price
     0  2007-10-01    AAPL  189.95
     1  2007-11-01    AAPL  182.22
     2  2007-12-01    AAPL  198.08
@@ -375,7 +364,7 @@ Importantly, the column and index labels no longer contain any useful metadata.<
 <p>As mentioned above, Altair works best with this long-form data, because relevant
 data and metadata are stored within the table itself, rather than within the
 labels of rows and columns:</p>
-<div class="highlight-python" id="data-rst-altair-source-5"><div class="highlight"><pre><span></span><span class="n">alt</span><span class="o">.</span><span class="n">Chart</span><span class="p">(</span><span class="n">long_form</span><span class="p">)</span><span class="o">.</span><span class="n">mark_line</span><span class="p">()</span><span class="o">.</span><span class="n">encode</span><span class="p">(</span>
+<div class="highlight-python notranslate" id="data-rst-altair-source-5"><div class="highlight"><pre><span></span><span class="n">alt</span><span class="o">.</span><span class="n">Chart</span><span class="p">(</span><span class="n">long_form</span><span class="p">)</span><span class="o">.</span><span class="n">mark_line</span><span class="p">()</span><span class="o">.</span><span class="n">encode</span><span class="p">(</span>
   <span class="n">x</span><span class="o">=</span><span class="s1">&#39;Date:T&#39;</span><span class="p">,</span>
   <span class="n">y</span><span class="o">=</span><span class="s1">&#39;price:Q&#39;</span><span class="p">,</span>
   <span class="n">color</span><span class="o">=</span><span class="s1">&#39;company:N&#39;</span>
@@ -388,13 +377,13 @@ labels of rows and columns:</p>
   // embed when document is loaded, to ensure vega library is available
   // this works on all modern browsers, except IE8 and older
   document.addEventListener("DOMContentLoaded", function(event) {
-      var spec = {"config": {"view": {"width": 400, "height": 300}}, "data": {"values": [{"Date": "2007-10-01", "company": "AAPL", "price": 189.95}, {"Date": "2007-11-01", "company": "AAPL", "price": 182.22}, {"Date": "2007-12-01", "company": "AAPL", "price": 198.08}, {"Date": "2007-10-01", "company": "AMZN", "price": 89.15}, {"Date": "2007-11-01", "company": "AMZN", "price": 90.56}, {"Date": "2007-12-01", "company": "AMZN", "price": 92.64}, {"Date": "2007-10-01", "company": "GOOG", "price": 707.0}, {"Date": "2007-11-01", "company": "GOOG", "price": 693.0}, {"Date": "2007-12-01", "company": "GOOG", "price": 691.48}]}, "mark": "line", "encoding": {"color": {"type": "nominal", "field": "company"}, "x": {"type": "temporal", "field": "Date"}, "y": {"type": "quantitative", "field": "price"}}, "$schema": "https://vega.github.io/schema/vega-lite/v2.4.3.json"};
+      var spec = {"config": {"view": {"width": 400, "height": 300}}, "data": {"values": [{"Date": "2007-10-01", "company": "AAPL", "price": 189.95}, {"Date": "2007-11-01", "company": "AAPL", "price": 182.22}, {"Date": "2007-12-01", "company": "AAPL", "price": 198.08}, {"Date": "2007-10-01", "company": "AMZN", "price": 89.15}, {"Date": "2007-11-01", "company": "AMZN", "price": 90.56}, {"Date": "2007-12-01", "company": "AMZN", "price": 92.64}, {"Date": "2007-10-01", "company": "GOOG", "price": 707.0}, {"Date": "2007-11-01", "company": "GOOG", "price": 693.0}, {"Date": "2007-12-01", "company": "GOOG", "price": 691.48}]}, "mark": "line", "encoding": {"color": {"type": "nominal", "field": "company"}, "x": {"type": "temporal", "field": "Date"}, "y": {"type": "quantitative", "field": "price"}}, "$schema": "https://vega.github.io/schema/vega-lite/v2.6.0.json"};
       var opt = {
         "mode": "vega-lite",
         "renderer": "canvas",
         "actions": {"editor": true, "source": true, "export": true}
       };
-      vegaEmbed('#data-rst-altair-plot-5', {"config": {"view": {"width": 400, "height": 300}}, "data": {"values": [{"Date": "2007-10-01", "company": "AAPL", "price": 189.95}, {"Date": "2007-11-01", "company": "AAPL", "price": 182.22}, {"Date": "2007-12-01", "company": "AAPL", "price": 198.08}, {"Date": "2007-10-01", "company": "AMZN", "price": 89.15}, {"Date": "2007-11-01", "company": "AMZN", "price": 90.56}, {"Date": "2007-12-01", "company": "AMZN", "price": 92.64}, {"Date": "2007-10-01", "company": "GOOG", "price": 707.0}, {"Date": "2007-11-01", "company": "GOOG", "price": 693.0}, {"Date": "2007-12-01", "company": "GOOG", "price": 691.48}]}, "mark": "line", "encoding": {"color": {"type": "nominal", "field": "company"}, "x": {"type": "temporal", "field": "Date"}, "y": {"type": "quantitative", "field": "price"}}, "$schema": "https://vega.github.io/schema/vega-lite/v2.4.3.json"}).catch(console.err);
+      vegaEmbed('#data-rst-altair-plot-5', {"config": {"view": {"width": 400, "height": 300}}, "data": {"values": [{"Date": "2007-10-01", "company": "AAPL", "price": 189.95}, {"Date": "2007-11-01", "company": "AAPL", "price": 182.22}, {"Date": "2007-12-01", "company": "AAPL", "price": 198.08}, {"Date": "2007-10-01", "company": "AMZN", "price": 89.15}, {"Date": "2007-11-01", "company": "AMZN", "price": 90.56}, {"Date": "2007-12-01", "company": "AMZN", "price": 92.64}, {"Date": "2007-10-01", "company": "GOOG", "price": 707.0}, {"Date": "2007-11-01", "company": "GOOG", "price": 693.0}, {"Date": "2007-12-01", "company": "GOOG", "price": 691.48}]}, "mark": "line", "encoding": {"color": {"type": "nominal", "field": "company"}, "x": {"type": "temporal", "field": "Date"}, "y": {"type": "quantitative", "field": "price"}}, "$schema": "https://vega.github.io/schema/vega-lite/v2.6.0.json"}).catch(console.err);
   });
 </script>
 </div><p>Wide-form data can be similarly visualized using e.g. layering
@@ -405,29 +394,29 @@ labels of rows and columns:</p>
 and must be done with an external tool.
 In Python, this kind of data manipulation can be done using <a class="reference external" href="http://pandas.pydata.org/">Pandas</a>, as discussed
 in detail in the <a class="reference external" href="https://pandas.pydata.org/pandas-docs/stable/reshaping.html">Reshaping and Pivot Tables</a> section of the Pandas documentation.</p>
-<p>Briefly, for converting long-form data to wide-form data, the <code class="docutils literal"><span class="pre">pivot</span></code> method of
+<p>Briefly, for converting long-form data to wide-form data, the <code class="docutils literal notranslate"><span class="pre">pivot</span></code> method of
 dataframes can be used:</p>
-<div class="highlight-python" id="data-rst-altair-source-6"><div class="highlight"><pre><span></span><span class="n">wide_form</span> <span class="o">=</span> <span class="n">long_form</span><span class="o">.</span><span class="n">pivot</span><span class="p">(</span><span class="n">index</span><span class="o">=</span><span class="s1">&#39;Date&#39;</span><span class="p">,</span> <span class="n">columns</span><span class="o">=</span><span class="s1">&#39;company&#39;</span><span class="p">,</span> <span class="n">values</span><span class="o">=</span><span class="s1">&#39;price&#39;</span><span class="p">)</span>
+<div class="highlight-python notranslate" id="data-rst-altair-source-6"><div class="highlight"><pre><span></span><span class="n">wide_form</span> <span class="o">=</span> <span class="n">long_form</span><span class="o">.</span><span class="n">pivot</span><span class="p">(</span><span class="n">index</span><span class="o">=</span><span class="s1">&#39;Date&#39;</span><span class="p">,</span> <span class="n">columns</span><span class="o">=</span><span class="s1">&#39;company&#39;</span><span class="p">,</span> <span class="n">values</span><span class="o">=</span><span class="s1">&#39;price&#39;</span><span class="p">)</span>
 <span class="k">print</span><span class="p">(</span><span class="n">wide_form</span><span class="p">)</span>
 </pre></div>
 </div>
 <div class="admonition">
-<div class="first last highlight-none"><div class="highlight"><pre><span></span>    company       AAPL   AMZN    GOOG
+<div class="first last highlight-none notranslate"><div class="highlight"><pre><span></span>    company       AAPL   AMZN    GOOG
     Date                             
     2007-10-01  189.95  89.15  707.00
     2007-11-01  182.22  90.56  693.00
     2007-12-01  198.08  92.64  691.48
 </pre></div>
 </div>
-<p>For more information on the <code class="docutils literal"><span class="pre">pivot</span></code> method, see the <a class="reference external" href="https://pandas.pydata.org/pandas-docs/stable/generated/pandas.DataFrame.pivot.html">Pandas pivot documentation</a>.</p>
-<p>For converting wide-form data to the long-form data used by Altair, the <code class="docutils literal"><span class="pre">melt</span></code>
+<p>For more information on the <code class="docutils literal notranslate"><span class="pre">pivot</span></code> method, see the <a class="reference external" href="https://pandas.pydata.org/pandas-docs/stable/generated/pandas.DataFrame.pivot.html">Pandas pivot documentation</a>.</p>
+<p>For converting wide-form data to the long-form data used by Altair, the <code class="docutils literal notranslate"><span class="pre">melt</span></code>
 method of dataframes can be used, after first turning the index into a column
-using the <code class="docutils literal"><span class="pre">reset_index</span></code> method:</p>
-<div class="highlight-python" id="data-rst-altair-source-7"><div class="highlight"><pre><span></span><span class="n">wide_form</span><span class="o">.</span><span class="n">reset_index</span><span class="p">()</span><span class="o">.</span><span class="n">melt</span><span class="p">(</span><span class="s1">&#39;Date&#39;</span><span class="p">)</span>
+using the <code class="docutils literal notranslate"><span class="pre">reset_index</span></code> method:</p>
+<div class="highlight-python notranslate" id="data-rst-altair-source-7"><div class="highlight"><pre><span></span><span class="n">wide_form</span><span class="o">.</span><span class="n">reset_index</span><span class="p">()</span><span class="o">.</span><span class="n">melt</span><span class="p">(</span><span class="s1">&#39;Date&#39;</span><span class="p">)</span>
 </pre></div>
 </div>
 <div class="admonition">
-<div class="first last highlight-none"><div class="highlight"><pre><span></span>             Date company   value
+<div class="first last highlight-none notranslate"><div class="highlight"><pre><span></span>             Date company   value
     0  2007-10-01    AAPL  189.95
     1  2007-11-01    AAPL  182.22
     2  2007-12-01    AAPL  198.08
@@ -439,16 +428,14 @@ using the <code class="docutils literal"><span class="pre">reset_index</span></c
     8  2007-12-01    GOOG  691.48
 </pre></div>
 </div>
-<p>For more information on the <code class="docutils literal"><span class="pre">melt</span></code> method, see the <a class="reference external" href="https://pandas.pydata.org/pandas-docs/stable/generated/pandas.DataFrame.melt.html#pandas.DataFrame.melt">Pandas melt documentation</a>.</p>
+<p>For more information on the <code class="docutils literal notranslate"><span class="pre">melt</span></code> method, see the <a class="reference external" href="https://pandas.pydata.org/pandas-docs/stable/generated/pandas.DataFrame.melt.html#pandas.DataFrame.melt">Pandas melt documentation</a>.</p>
 </div>
 </div>
 </div>
 
 
            </div>
-           <div class="articleComments">
-            
-           </div>
+           
           </div>
           <footer>
   
@@ -470,7 +457,7 @@ using the <code class="docutils literal"><span class="pre">reset_index</span></c
 
     </p>
   </div>
-  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
 
 </footer>
 
@@ -488,7 +475,8 @@ using the <code class="docutils literal"><span class="pre">reset_index</span></c
     <script type="text/javascript">
         var DOCUMENTATION_OPTIONS = {
             URL_ROOT:'../',
-            VERSION:'2.1.0',
+            VERSION:'2.2.0dev0',
+            LANGUAGE:'None',
             COLLAPSE_INDEX:false,
             FILE_SUFFIX:'.html',
             HAS_SOURCE:  true,
@@ -504,19 +492,13 @@ using the <code class="docutils literal"><span class="pre">reset_index</span></c
 
   
 
-  
-  
-    <script type="text/javascript" src="../_static/js/theme.js"></script>
-  
+  <script type="text/javascript" src="../_static/js/theme.js"></script>
 
-  
-  
   <script type="text/javascript">
       jQuery(function () {
-          SphinxRtdTheme.StickyNav.enable();
+          SphinxRtdTheme.Navigation.enable(true);
       });
-  </script>
-   
+  </script> 
 
 </body>
 </html>

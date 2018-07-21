@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>Altair Renderers &mdash; Altair 2.1.0 documentation</title>
+  <title>Altair Renderers &mdash; Altair 2.2.0dev0 documentation</title>
   
 
   
@@ -26,35 +26,23 @@
 
   
 
-  
-  
-    <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
-  
-
-  
-    <link rel="stylesheet" href="../_static/altair-plot.css" type="text/css" />
-  
-    <link rel="stylesheet" href="../_static/altair-gallery.css" type="text/css" />
-  
-    <link rel="stylesheet" href="../_static/theme_overrides.css" type="text/css" />
-  
-    <link rel="stylesheet" href="../_static/custom.css" type="text/css" />
-  
-
-  
-        <link rel="index" title="Index"
-              href="../genindex.html"/>
-        <link rel="search" title="Search" href="../search.html"/>
-    <link rel="top" title="Altair 2.1.0 documentation" href="../index.html"/>
-        <link rel="next" title="API Reference" href="API.html"/>
-        <link rel="prev" title="Display Troubleshooting" href="troubleshooting.html"/> 
+  <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/altair-plot.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/altair-gallery.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/theme_overrides.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/custom.css" type="text/css" />
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="API Reference" href="API.html" />
+    <link rel="prev" title="Display Troubleshooting" href="troubleshooting.html" /> 
 
   
   <script src="../_static/js/modernizr.min.js"></script>
 
 </head>
 
-<body class="wy-body-for-nav" role="document">
+<body class="wy-body-for-nav">
 
    
   <div class="wy-grid-for-nav">
@@ -71,7 +59,7 @@
 
           
             
-            <img src="../_static/altair-logo-light.png" class="logo" />
+            <img src="../_static/altair-logo-light.png" class="logo" alt="Logo"/>
           
           </a>
 
@@ -79,7 +67,7 @@
             
             
               <div class="version">
-                2.1
+                2.2.0dev0
               </div>
             
           
@@ -150,7 +138,7 @@
     <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
 
       
-      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+      <nav class="wy-nav-top" aria-label="top navigation">
         
           <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
           <a href="../index.html">Altair</a>
@@ -158,9 +146,10 @@
       </nav>
 
 
-      
       <div class="wy-nav-content">
+        
         <div class="rst-content">
+        
           
 
 
@@ -207,7 +196,7 @@
 <p>In order to turn your altair chart from the JSON structure output by Altair into
 a rendered visualization requires a front-end that knows how to interpret Vega
 and Vega-Lite specifications. To enable a particular renderer, you can use:</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">altair</span> <span class="k">as</span> <span class="nn">alt</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">altair</span> <span class="k">as</span> <span class="nn">alt</span>
 <span class="n">alt</span><span class="o">.</span><span class="n">renderers</span><span class="o">.</span><span class="n">enable</span><span class="p">(</span><span class="n">renderer_name</span><span class="p">)</span>
 </pre></div>
 </div>
@@ -216,7 +205,7 @@ and Vega-Lite specifications. To enable a particular renderer, you can use:</p>
 <dt><strong>JupyterLab</strong></dt>
 <dd><p class="first"><a class="reference external" href="http://jupyterlab.readthedocs.io/en/stable/">JupyterLab</a> works with the default renderer, and requires no additional enable
 step. To switch back to it after another renderer has been enabled, use:</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">alt</span><span class="o">.</span><span class="n">renderers</span><span class="o">.</span><span class="n">enable</span><span class="p">(</span><span class="s1">&#39;jupyterlab&#39;</span><span class="p">)</span>  <span class="c1"># Note: identical to enable(&#39;default&#39;)</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">alt</span><span class="o">.</span><span class="n">renderers</span><span class="o">.</span><span class="n">enable</span><span class="p">(</span><span class="s1">&#39;jupyterlab&#39;</span><span class="p">)</span>  <span class="c1"># Note: identical to enable(&#39;default&#39;)</span>
 </pre></div>
 </div>
 <p class="last">for more details on version and system requireements, see <a class="reference internal" href="display_frontends.html#display-jupyterlab"><span class="std std-ref">Displaying in JupyterLab</span></a>.</p>
@@ -224,24 +213,24 @@ step. To switch back to it after another renderer has been enabled, use:</p>
 <dt><strong>nteract</strong></dt>
 <dd><p class="first"><a class="reference external" href="https://nteract.io">nteract</a> works with the default renderer and requires no additional enable
 step. To switch back to it after another renderer has been enabled, use:</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">alt</span><span class="o">.</span><span class="n">renderers</span><span class="o">.</span><span class="n">enable</span><span class="p">(</span><span class="s1">&#39;nteract&#39;</span><span class="p">)</span>  <span class="c1"># Note: identical to enable(&#39;default&#39;)</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">alt</span><span class="o">.</span><span class="n">renderers</span><span class="o">.</span><span class="n">enable</span><span class="p">(</span><span class="s1">&#39;nteract&#39;</span><span class="p">)</span>  <span class="c1"># Note: identical to enable(&#39;default&#39;)</span>
 </pre></div>
 </div>
 <p class="last">for more details on version and system requirements, see <a class="reference internal" href="display_frontends.html#display-nteract"><span class="std std-ref">Displaying in nteract</span></a>.</p>
 </dd>
 <dt><strong>Jupyter Notebook</strong></dt>
 <dd><p class="first">for the classic <a class="reference external" href="https://jupyter-notebook.readthedocs.io/en/stable/">Jupyter Notebook</a> (not JupyterLab),
-you must switch to the <code class="docutils literal"><span class="pre">notebook</span></code> renderer:</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">alt</span><span class="o">.</span><span class="n">renderers</span><span class="o">.</span><span class="n">enable</span><span class="p">(</span><span class="s1">&#39;notebook&#39;</span><span class="p">)</span>
+you must switch to the <code class="docutils literal notranslate"><span class="pre">notebook</span></code> renderer:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">alt</span><span class="o">.</span><span class="n">renderers</span><span class="o">.</span><span class="n">enable</span><span class="p">(</span><span class="s1">&#39;notebook&#39;</span><span class="p">)</span>
 </pre></div>
 </div>
 <p class="last">Note that this requires the <a class="reference external" href="https://github.com/vega/ipyvega/tree/vega">vega</a> package; see <a class="reference internal" href="display_frontends.html#display-notebook"><span class="std std-ref">Displaying in the Jupyter Notebook</span></a>.</p>
 </dd>
 <dt><strong>Google Colab</strong></dt>
-<dd><p class="first"><a class="reference external" href="https://colab.research.google.com">Colab</a> requires use of the <code class="docutils literal"><span class="pre">colab</span></code> renderer, which will be enabled by
+<dd><p class="first"><a class="reference external" href="https://colab.research.google.com">Colab</a> requires use of the <code class="docutils literal notranslate"><span class="pre">colab</span></code> renderer, which will be enabled by
 default when Altair is imported.
 To switch back to it after another renderer has been enabled, use:</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">alt</span><span class="o">.</span><span class="n">renderers</span><span class="o">.</span><span class="n">enable</span><span class="p">(</span><span class="s1">&#39;colab&#39;</span><span class="p">)</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">alt</span><span class="o">.</span><span class="n">renderers</span><span class="o">.</span><span class="n">enable</span><span class="p">(</span><span class="s1">&#39;colab&#39;</span><span class="p">)</span>
 </pre></div>
 </div>
 <p class="last">For more information, see <a class="reference internal" href="display_frontends.html#display-colab"><span class="std std-ref">Displaying in Colab</span></a>.</p>
@@ -251,9 +240,7 @@ To switch back to it after another renderer has been enabled, use:</p>
 
 
            </div>
-           <div class="articleComments">
-            
-           </div>
+           
           </div>
           <footer>
   
@@ -275,7 +262,7 @@ To switch back to it after another renderer has been enabled, use:</p>
 
     </p>
   </div>
-  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
 
 </footer>
 
@@ -293,7 +280,8 @@ To switch back to it after another renderer has been enabled, use:</p>
     <script type="text/javascript">
         var DOCUMENTATION_OPTIONS = {
             URL_ROOT:'../',
-            VERSION:'2.1.0',
+            VERSION:'2.2.0dev0',
+            LANGUAGE:'None',
             COLLAPSE_INDEX:false,
             FILE_SUFFIX:'.html',
             HAS_SOURCE:  true,
@@ -309,19 +297,13 @@ To switch back to it after another renderer has been enabled, use:</p>
 
   
 
-  
-  
-    <script type="text/javascript" src="../_static/js/theme.js"></script>
-  
+  <script type="text/javascript" src="../_static/js/theme.js"></script>
 
-  
-  
   <script type="text/javascript">
       jQuery(function () {
-          SphinxRtdTheme.StickyNav.enable();
+          SphinxRtdTheme.Navigation.enable(true);
       });
-  </script>
-   
+  </script> 
 
 </body>
 </html>
